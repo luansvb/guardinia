@@ -341,7 +341,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ 
                         imagem: base64Data,
-                        tipo: 'imagem'
                     })
                 }
             );
