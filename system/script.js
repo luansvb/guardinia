@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             const response = await fetch(
-                "https://ly9yvqdsta.execute-api.us-east-1.amazonaws.com/prod/teste",
+                "https://hk2n2f9vu2.execute-api.us-east-1.amazonaws.com/prod/teste/teste",  // ✅ API correta
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const base64Data = selectedImageData.split(',')[1];
             
             const response = await fetch(
-                "https://hk2n2f9vu2.execute-api.us-east-1.amazonaws.com/prod/teste",
+                "https://hk2n2f9vu2.execute-api.us-east-1.amazonaws.com/prod/teste/teste",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
