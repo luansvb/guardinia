@@ -233,8 +233,10 @@ async function performAnalysis() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ 
-                    mensagem: elements.mensagem.value.trim() 
+                    mensagem: elements.mensagem.value.trim(),
+                    origem: "web"
                 })
+
             });
             
             if (!response.ok) {
@@ -256,7 +258,8 @@ async function performAnalysis() {
                 },
                 body: JSON.stringify({ 
                     imagem: base64,
-                    tipo: uploadedFile.type 
+                    tipo: uploadedFile.type,
+                     origem: "web"
                 })
             });
             
