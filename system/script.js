@@ -1,560 +1,470 @@
-// ===================================
-// GUARDINIA APP - JAVASCRIPT COMPLETO
-// ===================================
+// ================================================================
+// GUARDINIA SYSTEM - JAVASCRIPT
+// Sistema de Análise Inteligente de Mensagens
+// ================================================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ===================================
-    // PARTICLES.JS CONFIGURATION
-    // ===================================
-    
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#3b82f6' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.3, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: '#3b82f6', opacity: 0.2, width: 1 },
-                move: { enable: true, speed: 2, direction: 'none', random: false, out_mode: 'out' }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: {
-                    onhover: { enable: true, mode: 'grab' },
-                    onclick: { enable: true, mode: 'push' }
-                },
-                modes: {
-                    grab: { distance: 140, line_linked: { opacity: 0.5 } },
-                    push: { particles_nb: 4 }
-                }
-            }
-        });
-    }
-    
-    // ===================================
-    // DOM ELEMENTS
-    // ===================================
-    
-    const textarea = document.getElementById("mensagem");
-    const charCount = document.getElementById("charCount");
-    const btn = document.getElementById("btn");
-    const resultado = document.getElementById("resultado");
-    
+// ========= CONFIGURAÇÃO =========
+const CONFIG = {
+    // IMPORTANTE: Configure seu webhook aqui
+    WEBHOOK_URL: "https://hk2n2f9vu2.execute-api.us-east-1.amazonaws.com/prod/teste/teste",
+    MAX_FILE_SIZE: 5 * 1024 * 1024, // 5MB
+    ALLOWED_TYPES: ['image/png', 'image/jpeg', 'image/jpg', 'image/webp']
+};
+
+// ========= ELEMENTOS DOM =========
+const elements = {
     // Tabs
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+    tabButtons: document.querySelectorAll('.tab-btn'),
+    tabContents: document.querySelectorAll('.tab-content'),
+    
+    // Text input
+    mensagem: document.getElementById('mensagem'),
+    charCount: document.getElementById('charCount'),
     
     // Image upload
-    const uploadZone = document.getElementById('uploadZone');
-    const imageInput = document.getElementById('imageInput');
-    const btnSelectFile = document.getElementById('btnSelectFile');
-    const uploadPlaceholder = document.getElementById('uploadPlaceholder');
-    const imagePreview = document.getElementById('imagePreview');
-    const previewImg = document.getElementById('previewImg');
-    const fileName = document.getElementById('fileName');
-    const fileSize = document.getElementById('fileSize');
-    const btnRemoveImage = document.getElementById('btnRemoveImage');
+    imageInput: document.getElementById('imageInput'),
+    uploadZone: document.getElementById('uploadZone'),
+    uploadPlaceholder: document.getElementById('uploadPlaceholder'),
+    imagePreview: document.getElementById('imagePreview'),
+    previewImg: document.getElementById('previewImg'),
+    fileName: document.getElementById('fileName'),
+    fileSize: document.getElementById('fileSize'),
+    btnSelectFile: document.getElementById('btnSelectFile'),
+    btnRemoveImage: document.getElementById('btnRemoveImage'),
     
-    // State
-    let currentTab = 'text';
-    let selectedImage = null;
-    let selectedImageData = null;
+    // Analysis
+    btnAnalyze: document.getElementById('btnAnalyze'),
+    loadingState: document.getElementById('loadingState'),
+    resultado: document.getElementById('resultado')
+};
 
-    // ===================================
-    // TAB SWITCHING
-    // ===================================
+// ========= STATE =========
+let currentTab = 'text';
+let uploadedFile = null;
+
+// ========= INITIALIZATION =========
+document.addEventListener('DOMContentLoaded', () => {
+    initializeTabs();
+    initializeTextAnalysis();
+    initializeImageUpload();
+    initializeAnalyzeButton();
     
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const tab = btn.getAttribute('data-tab');
+    console.log('🛡️ GuardinIA System initialized successfully!');
+});
+
+// ========= TABS FUNCTIONALITY =========
+function initializeTabs() {
+    elements.tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tab = button.dataset.tab;
             switchTab(tab);
         });
     });
+}
+
+function switchTab(tab) {
+    currentTab = tab;
     
-    function switchTab(tab) {
-        currentTab = tab;
-        
-        // Update buttons
-        tabBtns.forEach(btn => {
-            if (btn.getAttribute('data-tab') === tab) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-        
-        // Update content
-        tabContents.forEach(content => {
-            if (content.id === `tab-${tab}`) {
-                content.classList.add('active');
-            } else {
-                content.classList.remove('active');
-            }
-        });
-        
-        // Update button text
-        if (tab === 'image') {
-            btn.innerHTML = '<i class="fas fa-search"></i><span>Analisar Imagem</span>';
+    // Update buttons
+    elements.tabButtons.forEach(btn => {
+        if (btn.dataset.tab === tab) {
+            btn.classList.add('active');
         } else {
-            btn.innerHTML = '<i class="fas fa-search"></i><span>Analisar Mensagem</span>';
-        }
-        
-        // Clear result
-        resultado.style.display = 'none';
-    }
-
-    // ===================================
-    // CHARACTER COUNTER
-    // ===================================
-    
-    textarea.addEventListener("input", () => {
-        charCount.textContent = textarea.value.length;
-    });
-
-    // ===================================
-    // IMAGE UPLOAD - DRAG & DROP
-    // ===================================
-    
-    uploadZone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        uploadZone.classList.add('drag-over');
-    });
-    
-    uploadZone.addEventListener('dragleave', () => {
-        uploadZone.classList.remove('drag-over');
-    });
-    
-    uploadZone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        uploadZone.classList.remove('drag-over');
-        
-        const files = e.dataTransfer.files;
-        if (files.length > 0) {
-            handleImageFile(files[0]);
+            btn.classList.remove('active');
         }
     });
     
-    // ===================================
-    // IMAGE UPLOAD - CLICK TO SELECT
-    // ===================================
-    
-    btnSelectFile.addEventListener('click', () => {
-        imageInput.click();
+    // Update content
+    elements.tabContents.forEach(content => {
+        if (content.id === `tab-${tab}`) {
+            content.classList.add('active');
+        } else {
+            content.classList.remove('active');
+        }
     });
     
-    imageInput.addEventListener('change', (e) => {
+    // Clear results when switching tabs
+    clearResults();
+}
+
+// ========= TEXT ANALYSIS =========
+function initializeTextAnalysis() {
+    if (!elements.mensagem) return;
+    
+    // Character counter
+    elements.mensagem.addEventListener('input', () => {
+        const length = elements.mensagem.value.length;
+        elements.charCount.textContent = length;
+        
+        // Color change when approaching limit
+        if (length > 450) {
+            elements.charCount.style.color = 'var(--vermelho)';
+        } else if (length > 400) {
+            elements.charCount.style.color = 'var(--laranja)';
+        } else {
+            elements.charCount.style.color = 'var(--cinza)';
+        }
+    });
+}
+
+// ========= IMAGE UPLOAD =========
+function initializeImageUpload() {
+    // Click to select file
+    elements.btnSelectFile.addEventListener('click', () => {
+        elements.imageInput.click();
+    });
+    
+    // File input change
+    elements.imageInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
         if (file) {
-            handleImageFile(file);
+            handleFileUpload(file);
         }
     });
     
-    // ===================================
-    // HANDLE IMAGE FILE
-    // ===================================
+    // Drag and drop
+    elements.uploadZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        elements.uploadZone.classList.add('dragover');
+    });
     
-    function handleImageFile(file) {
-        // Validate file type
-        const validTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/webp'];
-        if (!validTypes.includes(file.type)) {
-            showNotification('Formato inválido! Use PNG, JPG ou WEBP', 'error');
-            return;
+    elements.uploadZone.addEventListener('dragleave', () => {
+        elements.uploadZone.classList.remove('dragover');
+    });
+    
+    elements.uploadZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        elements.uploadZone.classList.remove('dragover');
+        
+        const file = e.dataTransfer.files[0];
+        if (file) {
+            handleFileUpload(file);
         }
-        
-        // Validate file size (5MB max)
-        const maxSize = 5 * 1024 * 1024; // 5MB
-        if (file.size > maxSize) {
-            showNotification('Arquivo muito grande! Máximo 5MB', 'error');
-            return;
-        }
-        
-        // Store file
-        selectedImage = file;
-        
-        // Read file as data URL for preview
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            selectedImageData = e.target.result;
-            showImagePreview(file, e.target.result);
-        };
-        reader.readAsDataURL(file);
+    });
+    
+    // Remove image
+    elements.btnRemoveImage.addEventListener('click', () => {
+        removeImage();
+    });
+}
+
+function handleFileUpload(file) {
+    // Validate file type
+    if (!CONFIG.ALLOWED_TYPES.includes(file.type)) {
+        showError('Formato inválido! Use PNG, JPG ou WEBP.');
+        return;
     }
     
-    // ===================================
-    // SHOW IMAGE PREVIEW
-    // ===================================
+    // Validate file size
+    if (file.size > CONFIG.MAX_FILE_SIZE) {
+        showError('Arquivo muito grande! Tamanho máximo: 5MB.');
+        return;
+    }
     
-    function showImagePreview(file, dataUrl) {
-        // Update preview info
-        fileName.textContent = file.name;
-        fileSize.textContent = formatFileSize(file.size);
-        
-        // Set preview image
-        previewImg.src = dataUrl;
+    uploadedFile = file;
+    
+    // Show preview
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        elements.previewImg.src = e.target.result;
+        elements.fileName.textContent = file.name;
+        elements.fileSize.textContent = formatFileSize(file.size);
         
         // Show preview, hide placeholder
-        uploadPlaceholder.style.display = 'none';
-        imagePreview.style.display = 'block';
-        
-        // Update upload zone style
-        uploadZone.style.border = '3px solid #10b981';
-        uploadZone.style.background = 'rgba(16, 185, 129, 0.05)';
-    }
-    
-    // ===================================
-    // REMOVE IMAGE
-    // ===================================
-    
-    btnRemoveImage.addEventListener('click', () => {
-        selectedImage = null;
-        selectedImageData = null;
-        imageInput.value = '';
-        
-        // Reset UI
-        uploadPlaceholder.style.display = 'block';
-        imagePreview.style.display = 'none';
-        uploadZone.style.border = '3px dashed #e2e8f0';
-        uploadZone.style.background = '#f8fafc';
-        
-        showNotification('Imagem removida', 'info');
-    });
-    
-    // ===================================
-    // FORMAT FILE SIZE
-    // ===================================
-    
-    function formatFileSize(bytes) {
-        if (bytes === 0) return '0 Bytes';
-        const k = 1024;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
-    }
-
-    // ===================================
-    // MENSAGENS PADRÃO
-    // ===================================
-    
-    const MENSAGENS_PADRAO = {
-        verde: {
-            titulo: "✅ Mensagem Segura",
-            texto: "Nenhuma ação necessária. A mensagem não apresenta indícios relevantes de golpe."
-        },
-        amarelo: {
-            titulo: "⚠️ Atenção",
-            texto: "A mensagem apresenta alguns sinais suspeitos. Tenha cautela e não forneça dados pessoais."
-        },
-        vermelho: {
-            titulo: "🚨 Possível Golpe Detectado",
-            texto: "A mensagem solicita ações sensíveis. Não responda, não clique em links e não forneça informações."
-        }
+        elements.uploadPlaceholder.style.display = 'none';
+        elements.imagePreview.style.display = 'block';
     };
+    reader.readAsDataURL(file);
+    
+    // Clear results
+    clearResults();
+}
 
-    // ===================================
-    // ANALYZE BUTTON
-    // ===================================
+function removeImage() {
+    uploadedFile = null;
+    elements.imageInput.value = '';
+    elements.previewImg.src = '';
     
-    btn.addEventListener("click", analisar);
+    // Hide preview, show placeholder
+    elements.imagePreview.style.display = 'none';
+    elements.uploadPlaceholder.style.display = 'block';
     
-    // Keyboard shortcut
-    textarea.addEventListener("keydown", (e) => {
-        if (e.ctrlKey && e.key === 'Enter') {
-            analisar();
-        }
+    // Clear results
+    clearResults();
+}
+
+function formatFileSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+// ========= ANALYZE BUTTON =========
+function initializeAnalyzeButton() {
+    elements.btnAnalyze.addEventListener('click', async () => {
+        await performAnalysis();
     });
+}
 
-    // ===================================
-    // MAIN ANALYSIS FUNCTION
-    // ===================================
+async function performAnalysis() {
+    // Validate input
+    if (currentTab === 'text') {
+        const message = elements.mensagem.value.trim();
+        if (!message) {
+            showError('Por favor, digite uma mensagem para análise.');
+            return;
+        }
+    } else if (currentTab === 'image') {
+        if (!uploadedFile) {
+            showError('Por favor, selecione uma imagem para análise.');
+            return;
+        }
+    }
     
-    async function analisar() {
+    // Show loading
+    showLoading();
+    
+    try {
+        // Prepare data
+        const formData = new FormData();
+        
         if (currentTab === 'text') {
-            await analisarTexto();
+            formData.append('type', 'text');
+            formData.append('message', elements.mensagem.value.trim());
         } else {
-            await analisarImagem();
+            formData.append('type', 'image');
+            formData.append('image', uploadedFile);
         }
-    }
-    
-    // ===================================
-    // ANALYZE TEXT
-    // ===================================
-    
-    async function analisarTexto() {
-        const texto = textarea.value.trim();
         
-        if (!texto) {
-            showNotification("Digite uma mensagem para analisar.", "warning");
-            return;
-        }
-
-        setLoadingState(true);
-        showLoadingResult();
-
-        try {
-            const response = await fetch(
-                "https://hk2n2f9vu2.execute-api.us-east-1.amazonaws.com/prod/teste/teste",  // ✅ API correta
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ mensagem: texto })
-                }
-            );
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            showResult(data);
-
-        } catch (error) {
-            console.error("Erro na análise:", error);
-            showErrorResult();
-        } finally {
-            setLoadingState(false);
-        }
-    }
-    
-    // ===================================
-    // ANALYZE IMAGE
-    // ===================================
-    
-    async function analisarImagem() {
-        if (!selectedImage || !selectedImageData) {
-            showNotification("Selecione uma imagem para analisar.", "warning");
-            return;
-        }
-
-        setLoadingState(true);
-        showLoadingResult('imagem');
-
-        try {
-            // Extract base64 data (remove data:image/xxx;base64, prefix)
-            const base64Data = selectedImageData.split(',')[1];
-            
-            const response = await fetch(
-                "https://hk2n2f9vu2.execute-api.us-east-1.amazonaws.com/prod/teste/teste",
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ 
-                        imagem: base64Data,
-                    })
-                }
-            );
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            showResult(data, true);
-
-        } catch (error) {
-            console.error("Erro na análise de imagem:", error);
-            showErrorResult(true);
-        } finally {
-            setLoadingState(false);
-        }
-    }
-    
-    // ===================================
-    // UI STATE FUNCTIONS
-    // ===================================
-    
-    function setLoadingState(loading) {
-        btn.disabled = loading;
+        // Call API
+        const response = await fetch(CONFIG.WEBHOOK_URL, {
+            method: 'POST',
+            body: formData
+        });
         
-        if (loading) {
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Analisando...</span>';
-        } else {
-            if (currentTab === 'image') {
-                btn.innerHTML = '<i class="fas fa-search"></i><span>Analisar Imagem</span>';
-            } else {
-                btn.innerHTML = '<i class="fas fa-search"></i><span>Analisar Mensagem</span>';
-            }
+        if (!response.ok) {
+            throw new Error('Erro na análise. Tente novamente.');
         }
+        
+        const result = await response.json();
+        
+        // Show results
+        hideLoading();
+        displayResults(result);
+        
+    } catch (error) {
+        console.error('Analysis error:', error);
+        hideLoading();
+        showError('Erro ao analisar mensagem. Por favor, tente novamente.');
     }
+}
+
+// ========= LOADING STATES =========
+function showLoading() {
+    elements.btnAnalyze.disabled = true;
+    elements.loadingState.style.display = 'block';
+    elements.resultado.innerHTML = '';
     
-    function showLoadingResult(tipo = 'mensagem') {
-        resultado.style.display = "block";
-        resultado.className = "resultado";
-        resultado.innerHTML = `
-            <div style="text-align: center; padding: 2rem;">
-                <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: #3b82f6; margin-bottom: 1rem;"></i>
-                <h2 style="color: #334155;">Analisando ${tipo}...</h2>
-                <p style="color: #64748b;">
-                    ${tipo === 'imagem' ? 'Extraindo texto com OCR e verificando padrões de golpes' : 'Verificando padrões de golpes e ameaças'}
-                </p>
+    // Scroll to loading
+    elements.loadingState.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function hideLoading() {
+    elements.btnAnalyze.disabled = false;
+    elements.loadingState.style.display = 'none';
+}
+
+// ========= RESULTS DISPLAY =========
+function displayResults(result) {
+    // Determine result type
+    const resultType = determineResultType(result);
+    
+    // Create result HTML
+    const html = `
+        <div class="result-card ${resultType}">
+            <div class="result-header">
+                <i class="fas ${getResultIcon(resultType)} result-icon"></i>
+                <div>
+                    <div class="result-title">${getResultTitle(resultType)}</div>
+                </div>
             </div>
-        `;
-        resultado.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-    
-    function showResult(data, isImage = false) {
-        const msg = MENSAGENS_PADRAO[data.cor] || {
-            titulo: "Resultado da Análise",
-            texto: data.acao_recomendada || "Análise concluída."
-        };
-
-        const cor = MENSAGENS_PADRAO[data.cor] ? data.cor : "amarelo";
-        resultado.className = `resultado resultado--${cor}`;
-
-        let detalhesHTML = '';
-        
-        // Show extracted text for images
-        if (isImage && data.texto_analisado) {
-            detalhesHTML += `
-                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.05); border-radius: 0.5rem;">
-                    <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: #334155;">
-                        <i class="fas fa-file-alt"></i> Texto Extraído (OCR):
-                    </h4>
-                    <p style="font-size: 0.95rem; color: #64748b; font-style: italic;">
-                        "${data.texto_analisado.substring(0, 200)}${data.texto_analisado.length > 200 ? '...' : ''}"
-                    </p>
-                </div>
-            `;
-        }
-        
-        if (data.motivos && data.motivos.length > 0) {
-            detalhesHTML += `
-                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid rgba(0,0,0,0.1);">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: #334155;">
-                        <i class="fas fa-list-ul"></i> Indicadores Detectados:
-                    </h3>
-                    <ul style="list-style: none; padding: 0;">
-                        ${data.motivos.slice(0, 5).map(motivo => `
-                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-                                <i class="fas fa-exclamation-circle" style="position: absolute; left: 0; top: 0.25rem; color: ${cor === 'verde' ? '#10b981' : cor === 'amarelo' ? '#f59e0b' : '#ef4444'};"></i>
-                                ${motivo}
-                            </li>
-                        `).join('')}
-                    </ul>
-                </div>
-            `;
-        }
-
-        if (data.confianca) {
-            detalhesHTML += `
-                <div style="margin-top: 1rem; text-align: center; padding: 1rem; background: rgba(0,0,0,0.05); border-radius: 0.5rem;">
-                    <strong>Confiança Técnica:</strong> ${data.confianca}%
-                </div>
-            `;
-        }
-
-        resultado.innerHTML = `
-            <h2>${msg.titulo}</h2>
-            <p style="font-size: 1.1rem; margin-top: 0.5rem;">${msg.texto}</p>
-            ${detalhesHTML}
-        `;
-
-        resultado.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-    
-    function showErrorResult(isImage = false) {
-        resultado.className = "resultado resultado--vermelho";
-        resultado.innerHTML = `
-            <h2><i class="fas fa-exclamation-triangle"></i> Erro de Conexão</h2>
-            <p>Não foi possível completar a análise. Verifique sua conexão e tente novamente.</p>
-            ${isImage ? '<p style="font-size: 0.95rem; margin-top: 1rem; opacity: 0.9;"><strong>Dica:</strong> Certifique-se de que a imagem contém texto visível.</p>' : ''}
-            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
-                <strong>Alternativa:</strong> Teste pelo nosso 
-                <a href="https://api.whatsapp.com/send?phone=5541985086826" 
-                   target="_blank" 
-                   style="color: #25D366; text-decoration: underline;">
-                    WhatsApp Bot
-                </a>
-            </p>
-        `;
-    }
-
-    // ===================================
-    // NOTIFICATION SYSTEM
-    // ===================================
-    
-    function showNotification(message, type = 'info') {
-        const colors = {
-            info: '#3b82f6',
-            warning: '#f59e0b',
-            error: '#ef4444',
-            success: '#10b981'
-        };
-        
-        const icons = {
-            info: 'info-circle',
-            warning: 'exclamation-triangle',
-            error: 'times-circle',
-            success: 'check-circle'
-        };
-        
-        const notification = document.createElement('div');
-        notification.style.cssText = `
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            background: ${colors[type] || colors.info};
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 10000;
-            animation: slideInRight 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            max-width: 400px;
-        `;
-        notification.innerHTML = `
-            <i class="fas fa-${icons[type] || icons.info}" style="font-size: 1.3rem;"></i>
-            <span>${message}</span>
-        `;
-        
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-            notification.style.animation = 'slideOutRight 0.3s ease';
-            setTimeout(() => notification.remove(), 300);
-        }, 3000);
-    }
-
-    // ===================================
-    // ANIMATIONS
-    // ===================================
-    
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        @keyframes slideOutRight {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-        }
+            <div class="result-content">
+                ${formatResultContent(result)}
+            </div>
+        </div>
     `;
-    document.head.appendChild(style);
-
-    // ===================================
-    // CONSOLE MESSAGE
-    // ===================================
     
-    console.log('%c GuardinIA ', 
-        'background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%); color: white; font-size: 20px; font-weight: bold; padding: 10px;');
-    console.log('%c Sistema de Análise com OCR Carregado ', 
-        'color: #3b82f6; font-size: 14px; font-weight: bold;');
+    elements.resultado.innerHTML = html;
+    
+    // Scroll to results
+    elements.resultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 
+function determineResultType(result) {
+    // Customize this based on your API response
+    if (result.is_scam || result.confidence > 0.7) {
+        return 'danger';
+    } else if (result.confidence > 0.4) {
+        return 'warning';
+    } else {
+        return 'success';
+    }
+}
+
+function getResultIcon(type) {
+    const icons = {
+        danger: 'fa-exclamation-circle',
+        warning: 'fa-exclamation-triangle',
+        success: 'fa-check-circle'
+    };
+    return icons[type] || 'fa-info-circle';
+}
+
+function getResultTitle(type) {
+    const titles = {
+        danger: '⚠️ GOLPE CONFIRMADO',
+        warning: '⚡ ATENÇÃO: Mensagem Suspeita',
+        success: '✅ Mensagem Segura'
+    };
+    return titles[type] || 'Resultado da Análise';
+}
+
+function formatResultContent(result) {
+    // Customize this based on your API response structure
+    let html = '';
+    
+    if (result.analysis) {
+        html += `<p>${result.analysis}</p>`;
+    }
+    
+    if (result.confidence) {
+        html += `<p><strong>Confiança técnica:</strong> ${(result.confidence * 100).toFixed(0)}%</p>`;
+    }
+    
+    if (result.scam_types && result.scam_types.length > 0) {
+        html += `
+            <h3>🎯 Tipos de Golpe Detectados:</h3>
+            <ul>
+                ${result.scam_types.map(type => `<li>${type}</li>`).join('')}
+            </ul>
+        `;
+    }
+    
+    if (result.reasons && result.reasons.length > 0) {
+        html += `
+            <h3>📋 Motivos:</h3>
+            <ul>
+                ${result.reasons.map(reason => `<li>${reason}</li>`).join('')}
+            </ul>
+        `;
+    }
+    
+    if (result.recommendations) {
+        html += `
+            <h3>💡 Recomendações:</h3>
+            <p>${result.recommendations}</p>
+        `;
+    }
+    
+    return html;
+}
+
+function clearResults() {
+    elements.resultado.innerHTML = '';
+}
+
+// ========= ERROR HANDLING =========
+function showError(message) {
+    const html = `
+        <div class="result-card danger">
+            <div class="result-header">
+                <i class="fas fa-times-circle result-icon"></i>
+                <div>
+                    <div class="result-title">Erro</div>
+                </div>
+            </div>
+            <div class="result-content">
+                <p>${message}</p>
+            </div>
+        </div>
+    `;
+    
+    elements.resultado.innerHTML = html;
+    elements.resultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// ========= DEMO MODE (for testing without backend) =========
+// Uncomment this to test the UI without a real backend
+/*
+async function performAnalysis() {
+    showLoading();
+    
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Mock result
+    const mockResult = {
+        is_scam: true,
+        confidence: 0.95,
+        analysis: 'Esta mensagem apresenta características típicas de golpe de phishing. O texto usa urgência artificial e solicita ação imediata.',
+        scam_types: ['Phishing', 'Urgência Artificial', 'Falso Bloqueio de PIX'],
+        reasons: [
+            'Uso de URGÊNCIA artificial ("URGENTE")',
+            'Ameaça de bloqueio de serviço',
+            'Solicitação de ação imediata',
+            'Link suspeito',
+            'Técnicas de engenharia social'
+        ],
+        recommendations: 'NÃO clique em links. Entre em contato com seu banco pelos canais oficiais. Bloqueie e denuncie o remetente.'
+    };
+    
+    hideLoading();
+    displayResults(mockResult);
+}
+*/
+
+// ========= UTILITY FUNCTIONS =========
+function scrollToElement(element, offset = 100) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+}
+
+// ========= KEYBOARD SHORTCUTS =========
+document.addEventListener('keydown', (e) => {
+    // Ctrl/Cmd + Enter to analyze
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault();
+        performAnalysis();
+    }
+    
+    // Escape to clear results
+    if (e.key === 'Escape') {
+        clearResults();
+    }
 });
+
+// ========= ANALYTICS (Optional) =========
+function trackEvent(category, action, label) {
+    // Add your analytics tracking here
+    // Example: gtag('event', action, { event_category: category, event_label: label });
+    console.log('Event:', category, action, label);
+}
+
+// Track tab switches
+elements.tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        trackEvent('Interface', 'tab_switch', button.dataset.tab);
+    });
+});
+
+// Track analysis
+elements.btnAnalyze.addEventListener('click', () => {
+    trackEvent('Analysis', 'analyze_click', currentTab);
+});
+
+console.log('✅ GuardinIA System ready!');

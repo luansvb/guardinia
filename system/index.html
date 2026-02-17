@@ -1,207 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GuardinIA - Análise de Golpes em Tempo Real</title>
-  <meta name="description" content="Sistema inteligente de detecção de golpes digitais">
-  
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardinIA - Sistema de Análise Inteligente</title>
+    <meta name="description" content="Sistema inteligente de detecção de golpes digitais usando Amazon Bedrock e IA avançada">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
-  <!-- Particles Background -->
-  <div id="particles-js"></div>
-
-  <!-- Back to Home -->
-  <a href="https://luansvb.github.io/guardinia/landing/" class="back-home">
-    <i class="fas fa-arrow-left"></i> Voltar ao Site
-  </a>
-
-  <main class="app-container">
-
-    <header class="app-header">
-      <div class="logo-container">
-        <img src="logo.png" alt="GuardinIA Logo" class="app-logo">
-      </div>
-      <h1 class="app-title">
-        <span class="gradient-text">GuardinIA</span>
-      </h1>
-      <p class="app-subtitle">Sistema Inteligente de Detecção de Golpes</p>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="https://luansvb.github.io/guardinia/landing/" class="logo">
+                    <img src="logo.png" alt="GuardinIA" class="logo-image">
+                    <span class="logo-text">GuardinIA</span>
+                </a>
+                <div class="nav-actions">
+                    <a href="https://luansvb.github.io/guardinia/landing/" class="btn-back">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Voltar ao Site</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <div class="app-card">
-      <div class="card-header">
-        <i class="fas fa-shield-alt"></i>
-        <h2>Análise de Mensagem</h2>
-      </div>
-
-      <p class="card-description">
-        Envie uma mensagem suspeita (texto ou imagem). Nosso sistema analisa padrões 
-        de golpes em tempo real com 99% de precisão usando OCR e IA.
-      </p>
-
-      <!-- Tabs para escolher entre texto e imagem -->
-      <div class="analysis-tabs">
-        <button class="tab-btn active" data-tab="text">
-          <i class="fas fa-comment-dots"></i>
-          <span>Texto</span>
-        </button>
-        <button class="tab-btn" data-tab="image">
-          <i class="fas fa-image"></i>
-          <span>Imagem</span>
-        </button>
-      </div>
-
-      <!-- TAB: Análise de Texto -->
-      <section id="tab-text" class="tab-content active">
-        <div class="input-section">
-          <label for="mensagem" class="input-label">
-            <i class="fas fa-comment-dots"></i> Mensagem para análise:
-          </label>
-
-          <textarea
-            id="mensagem"
-            maxlength="500"
-            placeholder="Exemplo: URGENTE! Seu PIX foi bloqueado. Clique aqui para regularizar agora!"
-          ></textarea>
-
-          <div class="char-counter">
-            <span id="charCount">0</span>/500 caracteres
-          </div>
-        </div>
-      </section>
-
-      <!-- TAB: Análise de Imagem -->
-      <section id="tab-image" class="tab-content">
-        <div class="input-section">
-          <label class="input-label">
-            <i class="fas fa-image"></i> Imagem para análise:
-          </label>
-
-          <!-- Upload Zone -->
-          <div class="upload-zone" id="uploadZone">
-            <input 
-              type="file" 
-              id="imageInput" 
-              accept="image/png,image/jpeg,image/jpg,image/webp"
-              hidden
-            >
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
             
-            <div class="upload-placeholder" id="uploadPlaceholder">
-              <i class="fas fa-cloud-upload-alt"></i>
-              <h3>Arraste e solte uma imagem aqui</h3>
-              <p>ou</p>
-              <button type="button" class="btn-upload" id="btnSelectFile">
-                <i class="fas fa-folder-open"></i>
-                Escolher Arquivo
-              </button>
-              <p class="upload-hint">PNG, JPG ou WEBP • Máx 5MB</p>
-            </div>
-
-            <!-- Image Preview -->
-            <div class="image-preview" id="imagePreview" style="display: none;">
-              <div class="preview-header">
-                <div class="preview-info">
-                  <i class="fas fa-check-circle"></i>
-                  <span id="fileName">imagem.jpg</span>
-                  <span id="fileSize" class="file-size">2.3 MB</span>
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    Sistema de Análise em Tempo Real
                 </div>
-                <button type="button" class="btn-remove" id="btnRemoveImage">
-                  <i class="fas fa-times"></i>
+                <h1 class="hero-title">
+                    Análise Inteligente de
+                    <span class="gradient-text">Mensagens Suspeitas</span>
+                </h1>
+                <p class="hero-description">
+                    Envie uma mensagem (texto ou imagem) e nosso sistema analisa usando 
+                    <strong>Amazon Bedrock (Claude)</strong> com análise cognitiva avançada
+                </p>
+            </section>
+
+            <!-- Analysis Card -->
+            <div class="analysis-card">
+                
+                <!-- Tabs -->
+                <div class="analysis-tabs">
+                    <button class="tab-btn active" data-tab="text">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Análise de Texto</span>
+                    </button>
+                    <button class="tab-btn" data-tab="image">
+                        <i class="fas fa-image"></i>
+                        <span>Análise de Imagem</span>
+                    </button>
+                </div>
+
+                <!-- Tab: Texto -->
+                <div id="tab-text" class="tab-content active">
+                    <div class="input-section">
+                        <label class="input-label">
+                            <i class="fas fa-comment-dots"></i>
+                            Cole a mensagem suspeita aqui:
+                        </label>
+                        <textarea
+                            id="mensagem"
+                            class="input-textarea"
+                            maxlength="500"
+                            placeholder="Exemplo: URGENTE! Seu PIX foi bloqueado. Clique aqui para regularizar agora e evitar multa de R$ 5.000!"
+                        ></textarea>
+                        <div class="char-counter">
+                            <span id="charCount">0</span>/500 caracteres
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Imagem -->
+                <div id="tab-image" class="tab-content">
+                    <div class="input-section">
+                        <label class="input-label">
+                            <i class="fas fa-image"></i>
+                            Envie uma imagem com a mensagem suspeita:
+                        </label>
+
+                        <!-- Upload Zone -->
+                        <div class="upload-zone" id="uploadZone">
+                            <input 
+                                type="file" 
+                                id="imageInput" 
+                                accept="image/png,image/jpeg,image/jpg,image/webp"
+                                hidden
+                            >
+                            
+                            <!-- Upload Placeholder -->
+                            <div class="upload-placeholder" id="uploadPlaceholder">
+                                <div class="upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <h3>Arraste uma imagem aqui</h3>
+                                <p class="upload-or">ou</p>
+                                <button type="button" class="btn-select-file" id="btnSelectFile">
+                                    <i class="fas fa-folder-open"></i>
+                                    Escolher Arquivo
+                                </button>
+                                <p class="upload-hint">PNG, JPG ou WEBP • Máx 5MB</p>
+                            </div>
+
+                            <!-- Image Preview -->
+                            <div class="image-preview" id="imagePreview" style="display: none;">
+                                <div class="preview-header">
+                                    <div class="preview-info">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div class="preview-text">
+                                            <span id="fileName" class="file-name">imagem.jpg</span>
+                                            <span id="fileSize" class="file-size">2.3 MB</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-remove" id="btnRemoveImage" title="Remover imagem">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="preview-image-container">
+                                    <img id="previewImg" src="" alt="Preview da imagem">
+                                </div>
+                                <div class="preview-status">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Imagem pronta para análise</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analyze Button -->
+                <button id="btnAnalyze" class="btn-analyze">
+                    <i class="fas fa-search"></i>
+                    <span>Analisar Agora</span>
                 </button>
-              </div>
-              <div class="preview-image-container">
-                <img id="previewImg" src="" alt="Preview">
-              </div>
-              <div class="preview-footer">
-                <i class="fas fa-info-circle"></i>
-                <span>Imagem pronta para análise</span>
-              </div>
+
+                <!-- Loading State -->
+                <div id="loadingState" class="loading-state" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <p>Analisando com Amazon Bedrock (Claude)...</p>
+                </div>
+
+                <!-- Results -->
+                <div id="resultado" class="resultado"></div>
+
             </div>
-          </div>
-        </div>
-      </section>
 
-      <button id="btn" class="btn-analyze">
-        <i class="fas fa-search"></i>
-        <span>Analisar Mensagem</span>
-      </button>
+            <!-- Security Tips -->
+            <section class="security-tips">
+                <div class="tips-header">
+                    <i class="fas fa-lightbulb"></i>
+                    <h2>Dicas de Segurança</h2>
+                </div>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <i class="fas fa-link"></i>
+                        <p>Nunca clique em links de mensagens não solicitadas</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-university"></i>
+                        <p>Bancos não pedem senhas por SMS ou WhatsApp</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-gift"></i>
+                        <p>Desconfie de prêmios ou promoções inesperadas</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-user-shield"></i>
+                        <p>Sempre verifique o remetente antes de responder</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-phone"></i>
+                        <p>Em caso de dúvida, contate a empresa diretamente</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Desconfie de mensagens com urgência artificial</p>
+                    </div>
+                </div>
+            </section>
 
-      <section id="resultado" class="resultado"></section>
-    </div>
+            <!-- Quick Links -->
+            <section class="quick-links">
+                <a href="https://api.whatsapp.com/send?phone=5541985086826" class="quick-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="quick-link-text">
+                        <strong>Testar no WhatsApp</strong>
+                        <span>Análise instantânea 24/7</span>
+                    </div>
+                </a>
+                <a href="https://luansvb.github.io/guardinia/landing/" class="quick-link">
+                    <i class="fas fa-home"></i>
+                    <div class="quick-link-text">
+                        <strong>Página Inicial</strong>
+                        <span>Conheça mais sobre o GuardinIA</span>
+                    </div>
+                </a>
+            </section>
 
-    <!-- Dicas de Segurança -->
-    <div class="tips-card">
-      <h3><i class="fas fa-lightbulb"></i> Dicas de Segurança</h3>
-      <div class="tips-grid">
-        <div class="tip-item">
-          <i class="fas fa-link"></i>
-          <p>Nunca clique em links de mensagens não solicitadas</p>
         </div>
-        <div class="tip-item">
-          <i class="fas fa-university"></i>
-          <p>Bancos não pedem senhas por SMS ou WhatsApp</p>
-        </div>
-        <div class="tip-item">
-          <i class="fas fa-gift"></i>
-          <p>Desconfie de prêmios ou promoções inesperadas</p>
-        </div>
-        <div class="tip-item">
-          <i class="fas fa-user-shield"></i>
-          <p>Sempre verifique o remetente antes de responder</p>
-        </div>
-        <div class="tip-item">
-          <i class="fas fa-phone"></i>
-          <p>Em caso de dúvida, contate a empresa diretamente</p>
-        </div>
-        <div class="tip-item">
-          <i class="fas fa-exclamation-triangle"></i>
-          <p>Desconfie de mensagens com urgência artificial</p>
-        </div>
-      </div>
-    </div>
+    </main>
 
-    <!-- Stats -->
-    <div class="stats-inline">
-      <div class="stat-inline">
-        <i class="fas fa-check-circle"></i>
-        <span class="stat-value">99%</span>
-        <span class="stat-label">Precisão</span>
-      </div>
-      <div class="stat-inline">
-        <i class="fas fa-shield-alt"></i>
-        <span class="stat-value">40+</span>
-        <span class="stat-label">Tipos de Golpes</span>
-      </div>
-      <div class="stat-inline">
-        <i class="fas fa-bolt"></i>
-        <span class="stat-value">&lt;2s</span>
-        <span class="stat-label">Resposta</span>
-      </div>
-    </div>
-
-    <footer class="app-footer">
-      <div class="footer-warning">
-        <i class="fas fa-info-circle"></i>
-        <strong>Importante:</strong> Esta é uma ferramenta de apoio à decisão.
-        Não substitui análise criteriosa e bom senso.
-      </div>
-      <div class="footer-links">
-        <a href="https://api.whatsapp.com/send?phone=5541985086826" target="_blank">
-          <i class="fab fa-whatsapp"></i> Testar no WhatsApp
-        </a>
-        <a href="https://luansvb.github.io/guardinia/landing/">
-          <i class="fas fa-home"></i> Página Inicial
-        </a>
-      </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-disclaimer">
+                <i class="fas fa-info-circle"></i>
+                <p>
+                    <strong>Importante:</strong> Esta é uma ferramenta de apoio à decisão. 
+                    Não substitui análise criteriosa e bom senso.
+                </p>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 GuardinIA - Proteção Inteligente Contra Golpes Digitais</p>
+                <p>Desenvolvido com 💙 por <a href="https://www.linkedin.com/in/luansvb/" target="_blank">Luan Vieira</a></p>
+            </div>
+        </div>
     </footer>
 
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
