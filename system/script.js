@@ -5,8 +5,8 @@
 
 // ========= CONFIGURAÇÃO =========
 const CONFIG = {
-    // IMPORTANTE: Configure seu webhook aqui
-    WEBHOOK_URL: "https://hk2n2f9vu2.execute-api.us-east-1.amazonaws.com/prod/teste/teste",
+    // Webhook do GuardinIA
+    WEBHOOK_URL: 'https://hk2n2f9vu2.execute-api.us-east-1.amazonaws.com/prod/teste/teste',
     MAX_FILE_SIZE: 5 * 1024 * 1024, // 5MB
     ALLOWED_TYPES: ['image/png', 'image/jpeg', 'image/jpg', 'image/webp']
 };
@@ -225,38 +225,69 @@ async function performAnalysis() {
     showLoading();
     
     try {
-        // Prepare data
-        const formData = new FormData();
-        
         if (currentTab === 'text') {
-            formData.append('type', 'text');
-            formData.append('message', elements.mensagem.value.trim());
+            // Análise de TEXTO
+            const response = await fetch(CONFIG.WEBHOOK_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    mensagem: elements.mensagem.value.trim() 
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Erro ${response.status}: ${response.statusText}`);
+            }
+            
+            const result = await response.json();
+            hideLoading();
+            displayResults(result);
+            
         } else {
-            formData.append('type', 'image');
-            formData.append('image', uploadedFile);
+            // Análise de IMAGEM (converter para base64)
+            const base64 = await fileToBase64(uploadedFile);
+            
+            const response = await fetch(CONFIG.WEBHOOK_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    imagem: base64,
+                    tipo: uploadedFile.type 
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Erro ${response.status}: ${response.statusText}`);
+            }
+            
+            const result = await response.json();
+            hideLoading();
+            displayResults(result);
         }
-        
-        // Call API
-        const response = await fetch(CONFIG.WEBHOOK_URL, {
-            method: 'POST',
-            body: formData
-        });
-        
-        if (!response.ok) {
-            throw new Error('Erro na análise. Tente novamente.');
-        }
-        
-        const result = await response.json();
-        
-        // Show results
-        hideLoading();
-        displayResults(result);
         
     } catch (error) {
         console.error('Analysis error:', error);
         hideLoading();
-        showError('Erro ao analisar mensagem. Por favor, tente novamente.');
+        showError(`Erro ao analisar: ${error.message}`);
     }
+}
+
+// Função auxiliar para converter arquivo em base64
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            // Remove o prefixo "data:image/xxx;base64,"
+            const base64 = reader.result.split(',')[1];
+            resolve(base64);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
 }
 
 // ========= LOADING STATES =========
@@ -276,8 +307,24 @@ function hideLoading() {
 
 // ========= RESULTS DISPLAY =========
 function displayResults(result) {
-    // Determine result type
-    const resultType = determineResultType(result);
+    // Mapear cor da resposta para tipo de resultado
+    const colorMap = {
+        'verde': 'success',
+        'amarelo': 'warning',
+        'vermelho': 'danger'
+    };
+    
+    const resultType = colorMap[result.cor] || 'warning';
+    
+    // Títulos padrão
+    const titles = {
+        'verde': '✅ Mensagem Segura',
+        'amarelo': '⚠️ Atenção',
+        'vermelho': '🚨 Possível Golpe'
+    };
+    
+    const title = titles[result.cor] || 'Resultado da Análise';
+    const content = result.acao_recomendada || result.mensagem || 'Análise concluída.';
     
     // Create result HTML
     const html = `
@@ -285,11 +332,12 @@ function displayResults(result) {
             <div class="result-header">
                 <i class="fas ${getResultIcon(resultType)} result-icon"></i>
                 <div>
-                    <div class="result-title">${getResultTitle(resultType)}</div>
+                    <div class="result-title">${title}</div>
                 </div>
             </div>
             <div class="result-content">
-                ${formatResultContent(result)}
+                <p>${content}</p>
+                ${result.detalhes ? `<p><em>${result.detalhes}</em></p>` : ''}
             </div>
         </div>
     `;
@@ -301,7 +349,7 @@ function displayResults(result) {
 }
 
 function determineResultType(result) {
-    // Customize this based on your API response
+    // Deprecated - usando displayResults direto
     if (result.is_scam || result.confidence > 0.7) {
         return 'danger';
     } else if (result.confidence > 0.4) {
@@ -318,55 +366,6 @@ function getResultIcon(type) {
         success: 'fa-check-circle'
     };
     return icons[type] || 'fa-info-circle';
-}
-
-function getResultTitle(type) {
-    const titles = {
-        danger: '⚠️ GOLPE CONFIRMADO',
-        warning: '⚡ ATENÇÃO: Mensagem Suspeita',
-        success: '✅ Mensagem Segura'
-    };
-    return titles[type] || 'Resultado da Análise';
-}
-
-function formatResultContent(result) {
-    // Customize this based on your API response structure
-    let html = '';
-    
-    if (result.analysis) {
-        html += `<p>${result.analysis}</p>`;
-    }
-    
-    if (result.confidence) {
-        html += `<p><strong>Confiança técnica:</strong> ${(result.confidence * 100).toFixed(0)}%</p>`;
-    }
-    
-    if (result.scam_types && result.scam_types.length > 0) {
-        html += `
-            <h3>🎯 Tipos de Golpe Detectados:</h3>
-            <ul>
-                ${result.scam_types.map(type => `<li>${type}</li>`).join('')}
-            </ul>
-        `;
-    }
-    
-    if (result.reasons && result.reasons.length > 0) {
-        html += `
-            <h3>📋 Motivos:</h3>
-            <ul>
-                ${result.reasons.map(reason => `<li>${reason}</li>`).join('')}
-            </ul>
-        `;
-    }
-    
-    if (result.recommendations) {
-        html += `
-            <h3>💡 Recomendações:</h3>
-            <p>${result.recommendations}</p>
-        `;
-    }
-    
-    return html;
 }
 
 function clearResults() {
