@@ -3,711 +3,403 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GuardinIA - Sistema Inteligente de Detecção de Golpes | Proteção em tempo real contra fraudes digitais">
-    <meta name="keywords" content="segurança digital, detecção de golpes, phishing, fraude, IA, inteligência artificial">
     <title>GuardinIA - Proteção Inteligente Contra Golpes Digitais</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="Sistema de IA com AWS Textract, Google Safe Browsing e VirusTotal que detecta golpes com 99% de precisão">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-    
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- HEADER -->
+    <header class="header">
         <div class="container">
-            <div class="nav-content">
-                <div class="logo-container">
-                    <img src="./img/logo.png" alt="GuardinIA Logo" class="nav-logo">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="./img/logo.png" alt="GuardinIA" class="logo-image">
                     <span class="logo-text">GuardinIA</span>
                 </div>
-                <div class="nav-links">
-                    <a href="#features" class="nav-link">Recursos</a>
-                    <a href="#security" class="nav-link">Segurança</a>
-                    <a href="#tech" class="nav-link">Tecnologia</a>
-                    <a href="#demo" class="nav-link">Demo</a>
-                    <a href="https://api.whatsapp.com/send?phone=5541985086826" target="_blank" class="btn-whatsapp-nav">
-                        <i class="fab fa-whatsapp"></i> Testar Agora
-                    </a>
-                </div>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+                <ul class="nav-menu">
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#categorias">Proteção</a></li>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#demo" class="btn-nav">Experimentar</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-icon">🛡️</span>
-                    <span>Proteção em Tempo Real</span>
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        🤖 Powered by AI
+                    </div>
+                    <h1 class="hero-title">
+                        Proteção Inteligente Contra <span class="gradient-text">Golpes Digitais</span>
+                    </h1>
+                    <p class="hero-description">
+                        Sistema de inteligência artificial que analisa mensagens e imagens em tempo real 
+                        usando Amazon Bedrock (Claude), detectando fraudes com análise cognitiva avançada.
+                    </p>
+                    <div class="hero-tech-badges">
+                        <div class="tech-badge-small">
+                            <span class="badge-emoji">🤖</span>
+                            <span>Amazon Bedrock</span>
+                        </div>
+                        <div class="tech-badge-small">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                            <span>AWS Textract</span>
+                        </div>
+                        <div class="tech-badge-small">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/googleg_48dp.png" alt="Google">
+                            <span>Safe Browsing</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="https://luansvb.github.io/guardinia/system/" class="btn btn-primary">
+                            🚀 Experimentar Grátis
+                        </a>
+                        <a href="https://wa.me/5541985086826" class="btn btn-secondary">
+                            💬 WhatsApp Bot
+                        </a>
+                    </div>
                 </div>
-                <h1 class="hero-title">
-                    <span class="gradient-text">GuardinIA</span>
-                    <br>
-                    Seu Escudo Inteligente Contra Golpes Digitais
-                </h1>
-                <p class="hero-subtitle">
-                    Sistema avançado de detecção de fraudes que analisa textos, imagens e URLs em tempo real, 
-                    protegendo você contra phishing, engenharia social e 40+ tipos de golpes digitais.
+                <div class="hero-image">
+                    <div class="mockup-container">
+                        <img src="./img/phone-mockup.png" alt="GuardinIA App" class="mockup">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🧠</div>
+                    <div class="stat-number">IA</div>
+                    <div class="stat-label">Bedrock Claude</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🛡️</div>
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Tipos de Golpes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Heurísticas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Disponível</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECNOLOGIAS -->
+    <section id="tecnologias" class="tecnologias">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🤖 Tecnologia</span>
+                <h2 class="section-title">Inteligência Artificial Multicamada</h2>
+                <p class="section-subtitle">
+                    Múltiplas IAs trabalhando em conjunto para máxima precisão
                 </p>
-                <div class="hero-cta">
-                    <a href="https://luansvb.github.io/guardinia/system/" target="_blank" class="btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Acessar Sistema Web
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=5541985086826" target="_blank" class="btn-secondary">
-                        <i class="fab fa-whatsapp"></i>
-                        Testar no WhatsApp
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">99%</div>
-                        <div class="stat-label">Precisão</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">8</div>
-                        <div class="stat-label">Categorias</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">40+</div>
-                        <div class="stat-label">Tipos de Golpes</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">&lt;3s</div>
-                        <div class="stat-label">Resposta</div>
-                    </div>
-                </div>
             </div>
-            <div class="hero-visual">
-                <div class="phone-mockup">
-                    <img src="./img/phone-mockup-cropped.png" alt="WhatsApp Bot" class="phone-image">
-                    <div class="scan-line"></div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Recursos</span>
-                <h2 class="section-title">Detecção Inteligente em Múltiplas Camadas</h2>
-                <p class="section-subtitle">Sistema heurístico avançado que combina IA, análise linguística e verificação externa</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
+            <div class="tech-grid">
+                <div class="tech-card tech-card-bedrock">
+                    <div class="bedrock-logo-container">
+                        <div class="bedrock-icon">🤖</div>
                     </div>
-                    <h3>Análise de Texto</h3>
-                    <p>Motor heurístico com 100+ padrões de detecção, análise semântica e detecção de urgência artificial</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Sanitização de entrada</li>
-                        <li><i class="fas fa-check"></i> Análise de entropia</li>
-                        <li><i class="fas fa-check"></i> Detecção de urgência</li>
-                    </ul>
+                    <h3>Amazon Bedrock (Claude)</h3>
+                    <p>IA cognitiva avançada da Anthropic via AWS Bedrock. Modelos Claude 3.5 Sonnet e Haiku para análise profunda de engenharia social e manipulação psicológica.</p>
+                    <div class="tech-meta">
+                        <span>🧠 Zona Cognitiva</span>
+                        <span>🎯 Double-pass</span>
+                    </div>
                 </div>
 
-                <div class="feature-card featured">
-                    <div class="featured-badge">Destaque</div>
-                    <div class="feature-icon">
-                        <i class="fas fa-image"></i>
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="tech-logo-large">
+                    <h3>AWS Textract OCR</h3>
+                    <p>Extração inteligente de texto de imagens e screenshots. Reconhece padrões visuais de golpes em qualquer tipo de imagem.</p>
+                    <div class="tech-meta">
+                        <span>⚡ ~1.8s</span>
+                        <span>📊 99.5%</span>
                     </div>
-                    <h3>OCR Avançado</h3>
-                    <p>Extração inteligente de texto em imagens via AWS Textract com análise contextual completa</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> AWS Textract</li>
-                        <li><i class="fas fa-check"></i> Análise de screenshots</li>
-                        <li><i class="fas fa-check"></i> Detecção de phishing visual</li>
-                    </ul>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-link"></i>
+                <div class="tech-card">
+                    <img src="https://www.gstatic.com/images/branding/product/2x/googleg_96dp.png" alt="Google" class="tech-logo-large">
+                    <h3>Google Safe Browsing</h3>
+                    <p>Verificação em tempo real de URLs contra banco de dados global de sites maliciosos e phishing.</p>
+                    <div class="tech-meta">
+                        <span>🌐 Global</span>
+                        <span>⚡ ~300ms</span>
                     </div>
-                    <h3>Verificação de URLs</h3>
-                    <p>Dupla verificação externa com Google Safe Browsing e VirusTotal para máxima segurança</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Google Safe Browsing</li>
-                        <li><i class="fas fa-check"></i> VirusTotal API</li>
-                        <li><i class="fas fa-check"></i> Análise de reputação</li>
-                    </ul>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-database"></i>
+                <div class="tech-card">
+                    <img src="https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg" alt="Lambda" class="tech-logo-large">
+                    <h3>AWS Lambda</h3>
+                    <p>Processamento serverless escalável. 100+ heurísticas contextuais analisando padrões de fraude.</p>
+                    <div class="tech-meta">
+                        <span>🧠 100+</span>
+                        <span>⚡ &lt;500ms</span>
                     </div>
-                    <h3>Cache Inteligente</h3>
-                    <p>Sistema de cache com hash SHA-256 para respostas instantâneas em análises repetidas</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> TTL de 30 dias</li>
-                        <li><i class="fas fa-check"></i> DynamoDB</li>
-                        <li><i class="fas fa-check"></i> Resposta &lt;100ms</li>
-                    </ul>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/DynamoDB.png" alt="DynamoDB" class="tech-logo-large">
+                    <h3>DynamoDB Cache</h3>
+                    <p>Cache inteligente com TTL de 7 dias. Respostas instantâneas e economia de custos.</p>
+                    <div class="tech-meta">
+                        <span>⚡ 85%</span>
+                        <span>🚀 &lt;80ms</span>
                     </div>
-                    <h3>Score Dinâmico</h3>
-                    <p>Sistema de pontuação ponderado com múltiplas heurísticas e análise de confiança estatística</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Peso por categoria</li>
-                        <li><i class="fas fa-check"></i> Confiança técnica</li>
-                        <li><i class="fas fa-check"></i> Redução de falso positivo</li>
-                    </ul>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="tech-logo-large">
+                    <h3>WhatsApp Business</h3>
+                    <p>Integração oficial com Meta. Bot disponível 24/7 para análise instantânea no celular.</p>
+                    <div class="tech-meta">
+                        <span>📱 24/7</span>
+                        <span>✅ Oficial</span>
                     </div>
-                    <h3>Taxonomia Completa</h3>
-                    <p>8 categorias principais com 40+ variantes de golpes baseadas em pesquisa atualizada</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Phishing & variantes</li>
-                        <li><i class="fas fa-check"></i> Engenharia social</li>
-                        <li><i class="fas fa-check"></i> Crypto & Web3</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Scam Categories -->
-    <section class="scam-categories">
+    <!-- CATEGORIAS -->
+    <section id="categorias" class="categorias">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Proteção Abrangente</span>
-                <h2 class="section-title">8 Categorias de Golpes Detectados</h2>
-                <p class="section-subtitle">Cobertura completa contra as principais ameaças digitais</p>
+                <span class="section-badge">🎯 Proteção</span>
+                <h2 class="section-title">8 Categorias de Golpes Detectadas</h2>
+                <p class="section-subtitle">
+                    Cobertura completa com 40+ variantes de fraudes
+                </p>
             </div>
 
             <div class="categories-grid">
                 <div class="category-card">
-                    <div class="category-icon phishing">
-                        <i class="fas fa-fish"></i>
-                    </div>
+                    <div class="category-icon">🎣</div>
                     <h3>Phishing</h3>
-                    <p>9 variantes incluindo spear phishing, whaling, smishing, vishing e quishing</p>
+                    <p class="category-variants">9 variantes</p>
+                    <ul>
+                        <li>Phishing Clássico</li>
+                        <li>Spear Phishing</li>
+                        <li>Whaling</li>
+                        <li>Smishing / Vishing</li>
+                    </ul>
                 </div>
 
                 <div class="category-card">
-                    <div class="category-icon social">
-                        <i class="fas fa-users"></i>
-                    </div>
+                    <div class="category-icon">👥</div>
                     <h3>Engenharia Social</h3>
-                    <p>Pretexting, pig butchering, honeytrap, scareware e falso sequestro</p>
+                    <p class="category-variants">5 variantes</p>
+                    <ul>
+                        <li>Pretexting</li>
+                        <li>Pig Butchering</li>
+                        <li>Honeytrap</li>
+                        <li>Falso Sequestro</li>
+                    </ul>
                 </div>
 
                 <div class="category-card">
-                    <div class="category-icon financial">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3>Fraudes Financeiras</h3>
-                    <p>PIX falso, comprovantes adulterados, portabilidade de salário e SIM swap</p>
+                    <div class="category-icon">💰</div>
+                    <h3>Financeiro</h3>
+                    <p class="category-variants">5 variantes</p>
+                    <ul>
+                        <li>PIX Falso</li>
+                        <li>Comprovante Falso</li>
+                        <li>SIM Swap</li>
+                        <li>Portabilidade</li>
+                    </ul>
                 </div>
 
                 <div class="category-card">
-                    <div class="category-icon malware">
-                        <i class="fas fa-virus"></i>
-                    </div>
+                    <div class="category-icon">🦠</div>
                     <h3>Malware</h3>
-                    <p>RAT, spyware, keylogger, ransomware, cryptojacking e adware</p>
+                    <p class="category-variants">6 variantes</p>
+                    <ul>
+                        <li>RAT / Mão Fantasma</li>
+                        <li>Spyware</li>
+                        <li>Ransomware</li>
+                        <li>Keylogger</li>
+                    </ul>
                 </div>
 
                 <div class="category-card">
-                    <div class="category-icon infrastructure">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
+                    <div class="category-icon">₿</div>
+                    <h3>Cripto</h3>
+                    <p class="category-variants">3 variantes</p>
+                    <ul>
+                        <li>Rug Pull</li>
+                        <li>Ice Phishing</li>
+                        <li>Dusting Attack</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🌐</div>
                     <h3>Infraestrutura</h3>
-                    <p>Evil twin, juice jacking e ataques de botnet</p>
+                    <p class="category-variants">3 variantes</p>
+                    <ul>
+                        <li>Evil Twin Wi-Fi</li>
+                        <li>Juice Jacking</li>
+                        <li>Botnet / DDoS</li>
+                    </ul>
                 </div>
 
                 <div class="category-card">
-                    <div class="category-icon crypto">
-                        <i class="fab fa-bitcoin"></i>
-                    </div>
-                    <h3>Crypto & Web3</h3>
-                    <p>Rug pull, ice phishing e dusting attack</p>
+                    <div class="category-icon">💼</div>
+                    <h3>Trabalho</h3>
+                    <p class="category-variants">3 variantes</p>
+                    <ul>
+                        <li>Task Scam</li>
+                        <li>Golpe Equipamento</li>
+                        <li>Guru Falso</li>
+                    </ul>
                 </div>
 
                 <div class="category-card">
-                    <div class="category-icon work">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Golpes de Trabalho</h3>
-                    <p>Task scam, falso equipamento e esquemas de "guru falso"</p>
-                </div>
-
-                <div class="category-card">
-                    <div class="category-icon ecommerce">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
+                    <div class="category-icon">🛒</div>
                     <h3>E-commerce</h3>
-                    <p>Dropshipping falso, brushing e marketplace fraudulento</p>
+                    <p class="category-variants">3 variantes</p>
+                    <ul>
+                        <li>Dropshipping Falso</li>
+                        <li>Brushing</li>
+                        <li>Marketplace Falso</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Security Section -->
-    <section id="security" class="security">
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="como-funciona">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Segurança</span>
-                <h2 class="section-title">Infraestrutura Enterprise</h2>
-                <p class="section-subtitle">Implementação robusta com foco em segurança, auditoria e conformidade</p>
+                <span class="section-badge">⚙️ Processo</span>
+                <h2 class="section-title">Como Funciona a Análise</h2>
+                <p class="section-subtitle">
+                    5 camadas de IA em milissegundos
+                </p>
             </div>
 
-            <div class="security-grid">
-                <div class="security-item">
-                    <div class="security-status completed">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="security-content">
-                        <h3>Assinatura de Webhook</h3>
-                        <p>Validação criptográfica de todas as requisições do WhatsApp Business API</p>
-                        <span class="security-badge critical">Crítico</span>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Entrada Segura</h3>
+                        <p>Sanitização e proteção contra prompt injection. Suporta texto ou imagem com OCR.</p>
                     </div>
                 </div>
 
-                <div class="security-item">
-                    <div class="security-status completed">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="security-content">
-                        <h3>Sanitização de Entrada</h3>
-                        <p>Remoção de caracteres invisíveis, validação de encoding e detecção de ofuscação</p>
-                        <span class="security-badge critical">Crítico</span>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Cache Inteligente</h3>
+                        <p>Verifica DynamoDB. Taxa de acerto ~85% com respostas &lt;80ms.</p>
                     </div>
                 </div>
 
-                <div class="security-item">
-                    <div class="security-status completed">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="security-content">
-                        <h3>Auditoria Completa</h3>
-                        <p>Todos os eventos armazenados em DynamoDB com TTL automático de 30 dias</p>
-                        <span class="security-badge important">Importante</span>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Análise Heurística</h3>
+                        <p>100+ heurísticas avaliam urgência, manipulação, padrões de golpe.</p>
                     </div>
                 </div>
 
-                <div class="security-item">
-                    <div class="security-status completed">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="security-content">
-                        <h3>Regex Robusta</h3>
-                        <p>Expressões regulares otimizadas para evitar ReDoS e catastrophic backtracking</p>
-                        <span class="security-badge important">Importante</span>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Verificação Externa</h3>
+                        <p>Google Safe Browsing e VirusTotal analisam URLs suspeitas.</p>
                     </div>
                 </div>
 
-                <div class="security-item">
-                    <div class="security-status completed">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="security-content">
-                        <h3>Timeout Otimizado</h3>
-                        <p>Limitação de tempo de processamento para prevenir consumo excessivo de recursos</p>
-                        <span class="security-badge important">Importante</span>
-                    </div>
-                </div>
-
-                <div class="security-item">
-                    <div class="security-status completed">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="security-content">
-                        <h3>Logs Estruturados</h3>
-                        <p>Sistema de logging hierárquico com níveis apropriados para cada evento</p>
-                        <span class="security-badge important">Importante</span>
-                    </div>
-                </div>
-
-                <div class="security-item">
-                    <div class="security-status completed">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="security-content">
-                        <h3>GSI para Auditoria</h3>
-                        <p>Global Secondary Index otimizado para consultas rápidas por timestamp e usuário</p>
-                        <span class="security-badge evolution">Evolução</span>
-                    </div>
-                </div>
-
-                <div class="security-item">
-                    <div class="security-status completed">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="security-content">
-                        <h3>Rate Limiting</h3>
-                        <p>Proteção contra abuse com controle de taxa de requisições por usuário</p>
-                        <span class="security-badge evolution">Evolução</span>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Classificação</h3>
+                        <p>Score multicamada: 🟢 Seguro / 🟡 Suspeito / 🔴 Golpe</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section id="tech" class="tech-stack">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Tecnologia</span>
-                <h2 class="section-title">Stack Tecnológico</h2>
-                <p class="section-subtitle">Arquitetura serverless moderna na AWS com integração de APIs líderes</p>
-            </div>
-
-            <div class="tech-grid">
-                <div class="tech-category">
-                    <h3 class="tech-category-title">Cloud & Compute</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">
-                            <i class="fab fa-aws"></i>
-                            <span>AWS Lambda</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-database"></i>
-                            <span>DynamoDB</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-file-image"></i>
-                            <span>AWS Textract</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-cloud"></i>
-                            <span>API Gateway</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3 class="tech-category-title">APIs & Integrações</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>WhatsApp Business API</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fab fa-google"></i>
-                            <span>Safe Browsing API</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-shield-virus"></i>
-                            <span>VirusTotal API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3 class="tech-category-title">Linguagem & Framework</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python 3.11</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-code"></i>
-                            <span>Boto3 SDK</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-brain"></i>
-                            <span>ML Heurístico</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech-category">
-                    <h3 class="tech-category-title">Frontend</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript ES6+</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="architecture-diagram">
-                <h3>Fluxo de Processamento</h3>
-                <div class="flow-diagram">
-                    <div class="flow-step">
-                        <div class="flow-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <p>Mensagem recebida via WhatsApp</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <div class="flow-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <p>API Gateway + Lambda</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <div class="flow-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <p>Verificação de Cache</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <div class="flow-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <p>Motor Heurístico</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <div class="flow-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <p>APIs de Segurança</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <div class="flow-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <p>Resposta ao Usuário</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demo Section -->
+    <!-- DEMO -->
     <section id="demo" class="demo">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Experimente</span>
-                <h2 class="section-title">Teste o GuardinIA Agora</h2>
-                <p class="section-subtitle">Comece a se proteger em segundos - escolha sua plataforma preferida</p>
-            </div>
-
-            <div class="demo-options">
-                <div class="demo-card">
-                    <div class="demo-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Sistema Web</h3>
-                    <p>Interface completa com histórico de análises, estatísticas e painel de controle</p>
-                    <a href="https://luansvb.github.io/guardinia/system/" target="_blank" class="demo-btn">
-                        <i class="fas fa-external-link-alt"></i>
-                        Acessar Aplicação
+            <div class="demo-content">
+                <h2>Experimente Agora Gratuitamente</h2>
+                <p>Teste com suas próprias mensagens e veja a IA em ação</p>
+                <div class="demo-buttons">
+                    <a href="https://luansvb.github.io/guardinia/system/" class="btn btn-primary btn-large">
+                        🌐 Sistema Web
                     </a>
-                </div>
-
-                <div class="demo-card featured-demo">
-                    <div class="popular-badge">Mais Popular</div>
-                    <div class="demo-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h3>Bot no WhatsApp</h3>
-                    <p>Análise instantânea direto no seu mensageiro - envie textos, links ou screenshots</p>
-                    <a href="https://api.whatsapp.com/send?phone=5541985086826" target="_blank" class="demo-btn">
-                        <i class="fab fa-whatsapp"></i>
-                        Iniciar Conversa
-                    </a>
-                    <div class="demo-phone">+55 (41) 98508-6826</div>
-                </div>
-
-                <div class="demo-card">
-                    <div class="demo-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>Código Fonte</h3>
-                    <p>Explore a implementação completa, arquitetura e contribua com o projeto</p>
-                    <a href="https://github.com/luansvb/guardinia" target="_blank" class="demo-btn">
-                        <i class="fab fa-github"></i>
-                        Ver no GitHub
-                    </a>
-                </div>
-            </div>
-
-            <div class="demo-examples">
-                <h3>Exemplos de Análise</h3>
-                <div class="examples-grid">
-                    <div class="example-card">
-                        <div class="example-header">
-                            <span class="example-type">Texto</span>
-                            <span class="example-result danger">🔴 Golpe</span>
-                        </div>
-                        <p class="example-text">"URGENTE! Seu PIX foi bloqueado. Clique aqui para regularizar agora!"</p>
-                        <div class="example-analysis">
-                            <div class="analysis-item">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span>Urgência artificial detectada</span>
-                            </div>
-                            <div class="analysis-item">
-                                <i class="fas fa-link"></i>
-                                <span>Link suspeito identificado</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="example-card">
-                        <div class="example-header">
-                            <span class="example-type">URL</span>
-                            <span class="example-result danger">🔴 Malicioso</span>
-                        </div>
-                        <p class="example-text">bradescoatendimento[.]com/login</p>
-                        <div class="example-analysis">
-                            <div class="analysis-item">
-                                <i class="fas fa-globe"></i>
-                                <span>Domínio não oficial detectado</span>
-                            </div>
-                            <div class="analysis-item">
-                                <i class="fas fa-virus"></i>
-                                <span>Google Safe Browsing: Phishing</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="example-card">
-                        <div class="example-header">
-                            <span class="example-type">Imagem</span>
-                            <span class="example-result warning">🟡 Suspeito</span>
-                        </div>
-                        <p class="example-text">Screenshot de falso comprovante de pagamento</p>
-                        <div class="example-analysis">
-                            <div class="analysis-item">
-                                <i class="fas fa-image"></i>
-                                <span>OCR detectou inconsistências</span>
-                            </div>
-                            <div class="analysis-item">
-                                <i class="fas fa-file-invoice"></i>
-                                <span>Padrão de comprovante adulterado</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid-large">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="stat-number counter" data-target="100">0</div>
-                    <div class="stat-label">Heurísticas Ativas</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="stat-number counter" data-target="40">0</div>
-                    <div class="stat-label">Variantes de Golpes</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="stat-number"><span class="counter" data-target="2">0</span>s</div>
-                    <div class="stat-label">Tempo de Resposta</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-check-double"></i>
-                    </div>
-                    <div class="stat-number counter" data-target="99">0</div>
-                    <div class="stat-label">% de Precisão</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Pronto para se Proteger?</h2>
-                <p>Junte-se aos usuários que já estão protegidos contra golpes digitais</p>
-                <div class="cta-buttons">
-                    <a href="https://api.whatsapp.com/send?phone=5541985086826" target="_blank" class="btn-cta-primary">
-                        <i class="fab fa-whatsapp"></i>
-                        Começar no WhatsApp
-                    </a>
-                    <a href="https://luansvb.github.io/guardinia/system/" target="_blank" class="btn-cta-secondary">
-                        <i class="fas fa-desktop"></i>
-                        Acessar Sistema Web
+                    <a href="https://wa.me/5541985086826" class="btn btn-secondary btn-large">
+                        💬 WhatsApp Bot
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="./img/logo.png" alt="GuardinIA Logo" class="footer-logo-img">
-                    <span class="footer-logo-text">GuardinIA</span>
-                    <p>Sistema Inteligente de Detecção de Golpes</p>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>🛡️ GuardinIA</h3>
+                    <p>Proteção inteligente contra golpes digitais com IA de ponta.</p>
+                    <p style="margin-top: 1rem;">
+                        📧 <a href="/cdn-cgi/l/email-protection#e98e9c889b8d808780888b869da98e84888085c78a8684"><span class="__cf_email__" data-cfemail="3b5c4e5a495f5255525a59544f7b5c565a525715585456">[email&#160;protected]</span></a>
+                    </p>
+                    <p>
+                        💼 <a href="https://www.linkedin.com/in/luansvb/" target="_blank">LinkedIn</a>
+                    </p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Produto</h4>
-                        <a href="#features">Recursos</a>
-                        <a href="#security">Segurança</a>
-                        <a href="#tech">Tecnologia</a>
-                        <a href="#demo">Demo</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Contato</h4>
-                        <a href="https://api.whatsapp.com/send?phone=5541985086826" target="_blank">WhatsApp</a>
-                        <a href="https://github.com/luansvb" target="_blank">GitHub</a>
-                        <a href="https://linkedin.com/in/luansvb" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Projeto</h4>
-                        <a href="https://github.com/luansvb/guardinia" target="_blank">Código Fonte</a>
-                        <a href="#" onclick="alert('Documentação em breve!')">Documentação</a>
-                        <a href="#" onclick="alert('API em desenvolvimento!')">API</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 GuardinIA. Desenvolvido com 💙 para proteger você.</p>
-                <p class="footer-tech">AWS Lambda • Python • WhatsApp Business API</p>
-            </div>
-        </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="https://luansvb.github.io/guardinia/system/">Sistema Web</a></li>
+                        <li><a href="https://wa.me/5541985086826">WhatsApp Bot</a></li>
+                        <li><a href="https://github.com/luansvb/guardinia">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Tecnologias</h4>
+                    <ul>
+                        <li><a href="#tecnologias">Amazon Bedrock</a></li>
+                        <li><a href="#tecnologias">AWS Textract</a></li>
+                        <li><a href="#tecnologias">Safe Browsing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Proteção</h4>
+                    <ul>
+                        <li><a href="#categorias">Phishing</a></li>
+                        <li><a href="#categorias">Financeiro</a></li>
+                        <li><a href="#categorias">Malware</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 GuardinIA. Desenvolvido com 💙 por <a href="https://www.linkedin.com/in/luansvb/
