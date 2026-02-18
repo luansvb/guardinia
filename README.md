@@ -102,3 +102,72 @@ Designed for portfolio demonstration of:
 ## 📄 License
 
 MIT
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+---
+
+# GuardinIA 🛡️ (Versão em Português)
+
+## 📌 Visão Geral
+
+GuardinIA é um motor híbrido de detecção de fraudes digitais, construído em arquitetura serverless na AWS.
+
+O sistema combina:
+
+- Heurísticas determinísticas
+- Análise de pressão psicológica
+- Detecção de anomalias financeiras
+- Sinais semânticos contextuais
+- Escalonamento cognitivo via Claude 3 Haiku (Amazon Bedrock)
+
+A arquitetura prioriza custo reduzido, escalando para IA apenas em casos ambíguos.
+
+---
+
+## 🔬 Benchmark Offline (Somente Heurísticas)
+
+Base de testes: 2000 mensagens  
+- 800 classificadas como golpe  
+- 1200 classificadas como legítimas  
+
+Resultados:
+
+- Acurácia: 90.45%
+- Precisão (Golpe): 100%
+- Recall (Golpe): 80.90%
+- F1 Score: 89.44%
+- Latência média: 0.33ms
+
+---
+
+## 🤖 Teste de Recuperação com IA (Escalonamento Cognitivo)
+
+Teste controlado em casos ambíguos (falsos negativos).
+
+Amostra: 50 casos  
+- Taxa de recuperação: 100%  
+- Latência média do modelo: 2.12s  
+- Custo médio por chamada: $0.000253  
+- Custo total estimado: $0.012630  
+
+---
+
+## 🎯 Filosofia do Projeto
+
+- Uso consciente de IA
+- Arquitetura heurística-first
+- Escalonamento cognitivo controlado
+- Arquitetura defensiva em nuvem
+- Logs compatíveis com LGPD
+
+---
+
+Projeto finalizado como protótipo production-ready para demonstração de:
+
+- Arquitetura em nuvem
+- Sistemas híbridos com IA
+- Engenharia de segurança
+- Benchmarking e análise de desempenho
+
