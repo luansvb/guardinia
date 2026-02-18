@@ -16,6 +16,14 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
 </p>
 
+## 🌐 Live Demo
+
+🚀 Landing Page (project overview):  
+👉 https://luansvb.github.io/guardinia/landing/
+
+🧪 Access the system directly:  
+👉 https://luansvb.github.io/guardinia/system/
+
 ---
 
 ## 📌 Overview
