@@ -183,3 +183,54 @@ Projeto finalizado como protótipo production-ready para demonstração de:
 - Engenharia de segurança
 - Benchmarking e análise de desempenho
 
+
+---
+
+<details>
+<summary><strong>🔎 Architecture Details (Technical Breakdown)</strong></summary>
+
+### Hybrid Decision Flow
+
+1. Incoming message is normalized and validated.
+2. Heuristic engine applies:
+   - Behavioral signatures
+   - Financial anomaly detection
+   - Semantic pressure scoring
+   - Contextual legitimacy reduction
+3. If risk is:
+   - Clearly low → classified as Safe
+   - Clearly high → classified as Fraud
+   - Ambiguous → escalated to cognitive model
+
+4. Cognitive Escalation:
+   - Claude 3 Haiku via Amazon Bedrock
+   - Strict JSON validation
+   - Anti-hallucination validation layer
+   - Divergence detection between heuristic and AI score
+
+5. Hybrid Fusion:
+   - Dynamic weight allocation
+   - Manipulation-based score adjustment
+   - Final bounded risk classification
+
+---
+
+### Performance Strategy
+
+- Heuristic latency: < 1ms
+- AI latency: ~2s (only when required)
+- Cost per AI call: ~$0.00025
+- Heuristic-first reduces unnecessary AI usage
+- DynamoDB used for caching and metrics tracking
+
+---
+
+### Security & Governance
+
+- HMAC validation for WhatsApp webhook
+- LGPD-safe logging (no sensitive storage)
+- Rate limiting per sender
+- Safe Browsing API integration
+- Controlled cognitive escalation
+
+</details>
