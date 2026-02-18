@@ -1,6 +1,3 @@
-# guardinia
-Serverless cloud project focused on scam detection, security practices and AWS architecture.
-
 # GuardinIA 🛡️
 
 Serverless hybrid fraud detection engine built on AWS, combining deterministic heuristics and cognitive AI (Amazon Bedrock).
