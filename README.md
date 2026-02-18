@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logo.png" width="200">
+<img src="./docs/logo.png" width="200">
 </p>
 
 <h1 align="center">GuardinIA</h1>
