@@ -40,6 +40,76 @@ The system is designed to reduce cost by escalating only ambiguous cases to AI.
 
 ---
 
+## 🚀 How to Deploy
+
+### Prerequisites
+- AWS Account with Bedrock access (Claude 3 Haiku enabled)
+- WhatsApp Business API (Meta Developer account)
+- Python 3.11+
+
+### Setup
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/luansvb/guardinia.git
+cd guardinia
+```
+
+**2. Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Configure environment variables**
+```bash
+cp .env.example .env
+# Fill in your values
+```
+
+**4. Deploy to AWS Lambda**
+- Runtime: Python 3.11
+- Handler: `src/lambda_handler.lambda_handler`
+- Timeout: 30s recommended
+- Set all variables from `.env.example` in Lambda environment
+
+**5. Create DynamoDB tables**
+- `guardinia_audit_logs`
+- `guardinia_cache`
+- `guardinia_metrics`
+
+**6. Enable AWS services**
+- Amazon Bedrock → enable Claude 3 Haiku in your region
+- Amazon Textract → no extra config needed
+- API Gateway → connect to your Lambda URL
+
+**7. Connect WhatsApp**
+- Set your Lambda URL as the Meta webhook endpoint
+- Use `VERIFY_TOKEN` for webhook verification
+
+---
+
+## 📡 Web API Usage
+
+Send a POST to your endpoint:
+```json
+{
+  "mensagem": "Clique aqui para liberar seu prêmio: http://premio-fake.com"
+}
+```
+
+Response:
+```json
+{
+  "status": "🔴 GOLPE CONFIRMADO",
+  "cor": "vermelho",
+  "confianca": 95,
+  "motivos": ["PHISHING: Phishing clássico"],
+  "acao_recomendada": "🚫 NÃO interaja. Bloqueie e denuncie.",
+  "score": 145
+}
+```
+---
+
 ## 🧠 Logical Architecture
 
 ```mermaid
