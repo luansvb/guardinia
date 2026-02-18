@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logo.jpg" width="180">
+  <img src="docs/logo.jpg" width="200">
 </p>
 
 <h1 align="center">GuardinIA</h1>
@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/AWS-Cloud-orange">
-  <img src="https://img.shields.io/badge/Architecture-Serverless-blue">
-  <img src="https://img.shields.io/badge/AI-Amazon%20Bedrock-purple">
-  <img src="https://img.shields.io/badge/License-MIT-green">
+  <img src="https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Architecture-Serverless-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/AI-Amazon%20Bedrock-purple?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
 </p>
 
 ---
