@@ -77,6 +77,18 @@ Sample size: 50
 
 ---
 
+## 📊 Benchmark Evidence
+
+### Offline Heuristic Evaluation
+
+![Offline Benchmark](docs/screenshots/test1.png)
+
+### AI Recovery Controlled Test
+
+![AI Recovery Test](docs/screenshots/test2.png)
+
+---
+
 ## 🎯 Design Philosophy
 
 - Cost-aware AI usage
