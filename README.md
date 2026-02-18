@@ -1,6 +1,20 @@
-# GuardinIA 🛡️
+<p align="center">
+  <img src="docs/logo.jpg" width="180">
+</p>
 
-Serverless hybrid fraud detection engine built on AWS, combining deterministic heuristics and cognitive AI (Amazon Bedrock).
+<h1 align="center">GuardinIA</h1>
+
+<p align="center">
+  <strong>Production-ready hybrid fraud detection engine built on AWS</strong><br>
+  Deterministic security heuristics + Cognitive AI (Amazon Bedrock) with cost-aware escalation
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS-Cloud-orange">
+  <img src="https://img.shields.io/badge/Architecture-Serverless-blue">
+  <img src="https://img.shields.io/badge/AI-Amazon%20Bedrock-purple">
+  <img src="https://img.shields.io/badge/License-MIT-green">
+</p>
 
 ---
 
@@ -96,6 +110,25 @@ Sample size: 50
 - Controlled cognitive escalation
 - Defensive cloud architecture
 - LGPD-safe logging strategy
+
+---
+
+## 🎓 AWS Certification
+
+<p align="center">
+  <img src="docs/aws-certified-cloud-practitioner.png" width="220">
+</p>
+
+The author holds the AWS Certified Cloud Practitioner (CLF-C02).
+
+This project demonstrates applied knowledge of:
+
+- AWS Lambda
+- Amazon Bedrock
+- DynamoDB
+- API Gateway
+- Amazon Textract
+- Serverless architecture design
 
 ---
 
