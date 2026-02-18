@@ -5,7 +5,7 @@
 <h1 align="center">GuardinIA</h1>
 
 <p align="center">
-  <strong>Production-ready hybrid fraud detection engine built on AWS</strong><br>
+  <strong>Production-Ready Hybrid Fraud Detection Engine (AWS Serverless)</strong><br>
   Deterministic security heuristics + Cognitive AI (Amazon Bedrock) with cost-aware escalation
 </p>
 
@@ -37,54 +37,6 @@ GuardinIA is a hybrid anti-fraud engine designed to detect digital scams using:
 - Cognitive escalation using Claude 3 Haiku (Amazon Bedrock)
 
 The system is designed to reduce cost by escalating only ambiguous cases to AI.
-
----
-
-## 🚀 How to Deploy
-
-### Prerequisites
-- AWS Account with Bedrock access (Claude 3 Haiku enabled)
-- WhatsApp Business API (Meta Developer account)
-- Python 3.11+
-
-### Setup
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/luansvb/guardinia.git
-cd guardinia
-```
-
-**2. Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-**3. Configure environment variables**
-```bash
-cp .env.example .env
-# Fill in your values
-```
-
-**4. Deploy to AWS Lambda**
-- Runtime: Python 3.11
-- Handler: `src/lambda_handler.lambda_handler`
-- Timeout: 30s recommended
-- Set all variables from `.env.example` in Lambda environment
-
-**5. Create DynamoDB tables**
-- `guardinia_audit_logs`
-- `guardinia_cache`
-- `guardinia_metrics`
-
-**6. Enable AWS services**
-- Amazon Bedrock → enable Claude 3 Haiku in your region
-- Amazon Textract → no extra config needed
-- API Gateway → connect to your Lambda URL
-
-**7. Connect WhatsApp**
-- Set your Lambda URL as the Meta webhook endpoint
-- Use `VERIFY_TOKEN` for webhook verification
 
 ---
 
@@ -181,6 +133,55 @@ Sample size: 50
 
 ---
 
+
+## 🚀 How to Deploy
+
+### Prerequisites
+- AWS Account with Bedrock access (Claude 3 Haiku enabled)
+- WhatsApp Business API (Meta Developer account)
+- Python 3.11+
+
+### Setup
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/luansvb/guardinia.git
+cd guardinia
+```
+
+**2. Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Configure environment variables**
+```bash
+cp .env.example .env
+# Fill in your values
+```
+
+**4. Deploy to AWS Lambda**
+- Runtime: Python 3.11
+- Handler: `src/lambda_handler.lambda_handler`
+- Timeout: 30s recommended
+- Set all variables from `.env.example` in Lambda environment
+
+**5. Create DynamoDB tables**
+- `guardinia_audit_logs`
+- `guardinia_cache`
+- `guardinia_metrics`
+
+**6. Enable AWS services**
+- Amazon Bedrock → enable Claude 3 Haiku in your region
+- Amazon Textract → no extra config needed
+- API Gateway → connect to your Lambda URL
+
+**7. Connect WhatsApp**
+- Set your Lambda URL as the Meta webhook endpoint
+- Use `VERIFY_TOKEN` for webhook verification
+
+---
+
 ## 🎯 Design Philosophy
 
 - Cost-aware AI usage
@@ -274,6 +275,76 @@ Amostra: 50 casos
 - Latência média do modelo: 2.12s  
 - Custo médio por chamada: $0.000253  
 - Custo total estimado: $0.012630  
+
+---
+
+## 📡 Uso via API Web
+
+Envie um POST para seu endpoint:
+```json
+{
+  "mensagem": "Clique aqui para liberar seu prêmio: http://premio-fake.com"
+}
+```
+
+Resposta:
+```json
+{
+  "status": "🔴 GOLPE CONFIRMADO",
+  "cor": "vermelho",
+  "confianca": 95,
+  "motivos": ["PHISHING: Phishing clássico"],
+  "acao_recomendada": "🚫 NÃO interaja. Bloqueie e denuncie.",
+  "score": 145
+}
+```
+---
+
+## 🚀 Como Fazer o Deploy
+
+### Pré-requisitos
+- Conta AWS com acesso ao Bedrock (Claude 3 Haiku habilitado)
+- WhatsApp Business API (conta Meta Developer)
+- Python 3.11+
+
+### Passo a passo
+
+**1. Clone o repositório**
+```bash
+git clone https://github.com/luansvb/guardinia.git
+cd guardinia
+```
+
+**2. Instale as dependências**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Configure as variáveis de ambiente**
+```bash
+cp .env.example .env
+# Preencha com seus valores
+```
+
+**4. Deploy no AWS Lambda**
+- Runtime: Python 3.11
+- Handler: `src/lambda_handler.lambda_handler`
+- Timeout: 30s recomendado
+- Configure todas as variáveis do `.env.example` no Lambda
+
+**5. Crie as tabelas no DynamoDB**
+- `guardinia_audit_logs`
+- `guardinia_cache`
+- `guardinia_metrics`
+
+**6. Habilite os serviços AWS**
+- Amazon Bedrock → habilite Claude 3 Haiku na sua região
+- Amazon Textract → sem configuração adicional
+- API Gateway → conecte ao seu Lambda
+
+**7. Conecte o WhatsApp**
+- Configure a URL do Lambda como webhook no Meta
+- Use o `VERIFY_TOKEN` para verificação do webhook
 
 ---
 
