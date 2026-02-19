@@ -24,6 +24,9 @@
 🧪 Access the system directly:  
 👉 https://luansvb.github.io/guardinia/system/
 
+📲 Test GuardinIA on WhatsApp (real environment):  
+👉 https://wa.me/554185086826?text=Oi%20GuardinIA
+
 ---
 
 ## 📌 Overview
