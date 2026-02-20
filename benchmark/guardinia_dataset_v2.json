@@ -1,0 +1,702 @@
+[
+  {
+    "id": "N001",
+    "categoria": "GOLPE",
+    "tipo": "urgencia_pix_premiado",
+    "canal": "WhatsApp",
+    "mensagem": "🚨 URGENTE — Seu Pix de R$3.500 está BLOQUEADO pelo Banco Central! Desbloqueie AGORA em: bcpix-liberar.net/urgente antes das 23h59 de hoje ou o valor será cancelado!"
+  },
+  {
+    "id": "N002",
+    "categoria": "GOLPE",
+    "tipo": "senha_direta",
+    "canal": "Ligação",
+    "mensagem": "Central antifraude Bradesco. Detectamos compra de R$4.200 em Lisboa no seu cartão AGORA. Para cancelar imediatamente informe os 4 dígitos da sua senha e o código de 6 dígitos que chegou no seu SMS."
+  },
+  {
+    "id": "N003",
+    "categoria": "GOLPE",
+    "tipo": "cpf_bloqueio_urgente",
+    "canal": "SMS",
+    "mensagem": "⚠️ SERASA: Seu CPF será NEGATIVADO em 2 horas por dívida de R$7.830. Último aviso! Regularize AGORA: serasa-cpf-urgente.net/limpar — após prazo não é possível reverter"
+  },
+  {
+    "id": "N004",
+    "categoria": "GOLPE",
+    "tipo": "investimento_garantido",
+    "canal": "WhatsApp",
+    "mensagem": "Olha isso! Tô ganhando R$800 por dia com essa plataforma de cripto. Sem risco, 40% ao mês GARANTIDO. Já saquei mais de R$12.000 esse mês. Posso te colocar em contato com a gestora? Vagas limitadas só pra hoje."
+  },
+  {
+    "id": "N005",
+    "categoria": "GOLPE",
+    "tipo": "fgts_taxa",
+    "canal": "SMS",
+    "mensagem": "CAIXA ECONÔMICA: Saque FGTS Extraordinário de R$2.900 aprovado para seu CPF. EXPIRA EM 48H! Acesse AGORA: caixa-fgts-extraordinario.net e pague taxa de liberação de R$39,90"
+  },
+  {
+    "id": "N006",
+    "categoria": "GOLPE",
+    "tipo": "filho_preso_urgente",
+    "canal": "Ligação",
+    "mensagem": "Mãe, me prenderam numa blitz agora, tô sem bateria de celular, peguei o telefone de um policial. Precisam de R$3.000 de fiança AGORA para me soltar antes da audiência. Não conta pro pai ainda. Faz Pix pra chave 11988774455."
+  },
+  {
+    "id": "N007",
+    "categoria": "GOLPE",
+    "tipo": "link_banco_falso_urgente",
+    "canal": "SMS",
+    "mensagem": "Itaú URGENTE: Transação suspeita de R$5.500 detectada. Sua conta será BLOQUEADA em 30 minutos. Cancele agora: itau-cancelar-transacao.net/seguro — caso não aja perderá o valor"
+  },
+  {
+    "id": "N008",
+    "categoria": "GOLPE",
+    "tipo": "premio_sorteio_taxa",
+    "canal": "WhatsApp",
+    "mensagem": "PARABÉNS 🎉 Seu número foi sorteado no MEGA PIX 2024! Você ganhou R$8.750,00! Para receber, acesse: megapix-resgate.com e pague apenas R$29,90 de taxa administrativa. Promoção expira em 3 horas!"
+  },
+  {
+    "id": "N009",
+    "categoria": "GOLPE",
+    "tipo": "whatsapp_codigo_urgente",
+    "canal": "WhatsApp",
+    "mensagem": "Aqui é suporte oficial WhatsApp. Sua conta está sendo usada em outro dispositivo AGORA. Para recuperar o acesso IMEDIATAMENTE envie o código de 6 dígitos que acabou de chegar no seu SMS. Você tem 5 minutos."
+  },
+  {
+    "id": "N010",
+    "categoria": "GOLPE",
+    "tipo": "receita_multa",
+    "canal": "Email",
+    "mensagem": "⚠️ RECEITA FEDERAL — NOTIFICAÇÃO URGENTE: Inconsistência grave na sua declaração IRPF 2024. Multa de R$9.230 será EXECUTADA em 72 horas. Regularize imediatamente em: receita-regularizar-urgente.com ou responda com seus dados."
+  },
+  {
+    "id": "N011",
+    "categoria": "GOLPE",
+    "tipo": "romance_golpe",
+    "canal": "WhatsApp",
+    "mensagem": "Oi! Você aceita mensagem de desconhecido? Me chamo Natalie, trabalho no exterior com mineração de ouro. Tô querendo conhecer pessoas sérias do Brasil. Você parece uma pessoa especial. Podemos conversar?"
+  },
+  {
+    "id": "N012",
+    "categoria": "GOLPE",
+    "tipo": "entrega_taxa_urgente",
+    "canal": "SMS",
+    "mensagem": "CORREIOS: Objeto RR991238476BR RETIDO na alfândega por pendência fiscal. Taxa de R$18,50 OBRIGATÓRIA para liberar. Pague HOJE ou será devolvido: correios-taxa-liberacao.site/pagar"
+  },
+  {
+    "id": "N013",
+    "categoria": "GOLPE",
+    "tipo": "auxilio_taxa",
+    "canal": "WhatsApp",
+    "mensagem": "GOVERNO FEDERAL — PROGRAMA RENDA FAMÍLIA 2024: Você foi aprovado para receber R$2.400 mensais. Para ativar o benefício pague a taxa de cadastro de R$47 em: gov-renda-familia.net/cadastrar — prazo HOJE"
+  },
+  {
+    "id": "N014",
+    "categoria": "GOLPE",
+    "tipo": "boleto_falso_urgente",
+    "canal": "Email",
+    "mensagem": "NET CLARO: Fatura VENCIDA R$312,40 — CORTE PROGRAMADO PARA HOJE! Evite interrupção dos serviços. Pague agora: net-claro-2via.net/emitir-boleto — último aviso antes do bloqueio automático"
+  },
+  {
+    "id": "N015",
+    "categoria": "GOLPE",
+    "tipo": "cartao_clonado_motoboy",
+    "canal": "Ligação",
+    "mensagem": "Aqui é da central de segurança Nubank. Seu cartão foi clonado agora em uma farmácia em Campinas. Vamos cancelar e emitir novo. Para sua segurança, um motoboy vai buscar seu cartão físico em 1 hora. Não precisa da senha, só do cartão cortado."
+  },
+  {
+    "id": "N016",
+    "categoria": "GOLPE",
+    "tipo": "pix_taxa_liberacao",
+    "canal": "SMS",
+    "mensagem": "BANCO CENTRAL: Pix de R$4.100 em seu nome está RETIDO por suspeita de lavagem. Para liberar comprove idoneidade pagando taxa de R$150 em: bancobrasil-pix-liberar.net/urgente — prazo 24h"
+  },
+  {
+    "id": "N017",
+    "categoria": "GOLPE",
+    "tipo": "emprego_taxa",
+    "canal": "WhatsApp",
+    "mensagem": "Vaga URGENTE: Atendente home office R$3.800/mês, 4h por dia, sem experiência! 15 vagas disponíveis. Para garantir sua vaga pague R$67 de cadastro e uniforme em: contratacao-urgente.net/vaga — seleção HOJE"
+  },
+  {
+    "id": "N018",
+    "categoria": "GOLPE",
+    "tipo": "seguro_falso_resgate",
+    "canal": "Ligação",
+    "mensagem": "Porto Seguro aqui. O senhor possui seguro de vida há 12 anos que acumulou R$15.400 corrigidos. Para resgatar hoje confirme: CPF, data de nascimento e senha do banco para processarmos a transferência."
+  },
+  {
+    "id": "N019",
+    "categoria": "GOLPE",
+    "tipo": "marketplace_link_falso",
+    "canal": "WhatsApp",
+    "mensagem": "Vi seu anúncio no Marketplace, quero comprar. Vou pagar pelo PagSeguro mas você precisa confirmar o recebimento clicando aqui: pagseguro-confirmar-venda.net/receber — aparece como pendente do meu lado até você confirmar."
+  },
+  {
+    "id": "N020",
+    "categoria": "GOLPE",
+    "tipo": "detran_multa_desconto",
+    "canal": "SMS",
+    "mensagem": "DETRAN-RJ URGENTE: 4 multas em aberto no valor de R$2.180. Com desconto de 50% somente HOJE: R$1.090. Pague via Pix: detran-rj-debitos-urgente.com/pagar — oferta expira à meia-noite"
+  },
+  {
+    "id": "N021",
+    "categoria": "GOLPE",
+    "tipo": "criptomoeda_retorno",
+    "canal": "WhatsApp",
+    "mensagem": "Oportunidade única! Plataforma nova de staking de Bitcoin rendendo 15% ao dia. Já investi R$500 e saquei R$4.200 em 7 dias. Mínimo de entrada R$200. Hoje é o último dia com bônus de 20%. Te passo o link?"
+  },
+  {
+    "id": "N022",
+    "categoria": "GOLPE",
+    "tipo": "banco_dados_confirmacao",
+    "canal": "SMS",
+    "mensagem": "BB Segurança: Detectamos acesso suspeito à sua conta agora de Fortaleza/CE. Conta SERÁ BLOQUEADA em 15 min. Confirme sua identidade: bb-confirmar-identidade.net — informe CPF e senha internet banking"
+  },
+  {
+    "id": "N023",
+    "categoria": "GOLPE",
+    "tipo": "falso_pix_engano",
+    "canal": "WhatsApp",
+    "mensagem": "Oi! Me chamo Roberta. Mandei Pix de R$1.200 pro número errado e caiu na sua conta. Tô desesperada, é dinheiro do aluguel. Por favor me devolve agora na chave 21997332211. Tenho comprovante pra te mostrar."
+  },
+  {
+    "id": "N024",
+    "categoria": "GOLPE",
+    "tipo": "nfe_malware",
+    "canal": "Email",
+    "mensagem": "Nota Fiscal Eletrônica emitida em seu CPF — Valor R$3.847,00. Empresa: Tech Solutions LTDA. Clique para visualizar e contestar caso não reconheça: danfe-consultar.com.br/nfe-3847.exe — prazo de contestação 48h"
+  },
+  {
+    "id": "N025",
+    "categoria": "GOLPE",
+    "tipo": "telegram_exchange_fake",
+    "canal": "Telegram",
+    "mensagem": "⚠️ @Binance_Suporte_Oficial: Identificamos saque não autorizado de USD 2.300 da sua conta. Para reverter e proteger seus fundos transfira para carteira de custódia segura IMEDIATAMENTE. Link: t.me/binance-custodia-br"
+  },
+  {
+    "id": "N026",
+    "categoria": "GOLPE",
+    "tipo": "pix_premiado_gov",
+    "canal": "SMS",
+    "mensagem": "MINISTÉRIO DA FAZENDA: Programa Pix Premiado Fase 3 — Seu CPF contemplado com R$4.500. Para receber acesse HOJE: gov-pix-premiado.net e confirme dados bancários. Expira em 24 horas."
+  },
+  {
+    "id": "N027",
+    "categoria": "GOLPE",
+    "tipo": "urgencia_hospital",
+    "canal": "WhatsApp",
+    "mensagem": "PAI! Tive acidente de moto. Tô no PS do Hospital São Lucas. Médico pediu cirurgia URGENTE de R$4.800. Não tenho como ligar pro meu número, tô no celular da enfermeira. Faz Pix agora: 11944332211. URGENTE!"
+  },
+  {
+    "id": "N028",
+    "categoria": "GOLPE",
+    "tipo": "cashback_expirado",
+    "canal": "WhatsApp",
+    "mensagem": "🔴 ÚLTIMA HORA: Você tem R$847 de cashback acumulado no Mercado Pago EXPIRANDO EM 2 HORAS! Resgate agora antes de perder: mercadopago-cashback-resgate.net — mais de 3.000 clientes já resgataram hoje!"
+  },
+  {
+    "id": "N029",
+    "categoria": "GOLPE",
+    "tipo": "falso_advogado_restituicao",
+    "canal": "Email",
+    "mensagem": "Dr. Marcelo Souza — Advogado. Identificamos que você tem direito a R$18.700 de restituição de tarifas bancárias cobradas indevidamente (2019-2024). Para darmos entrada no processo deposite R$250 de custas cartorárias. Responda para prosseguir."
+  },
+  {
+    "id": "N030",
+    "categoria": "GOLPE",
+    "tipo": "ifood_taxa",
+    "canal": "SMS",
+    "mensagem": "iFood: Pedido #8847 não pode ser entregue. Taxa de reentrega R$7,90 obrigatória. Válido somente nas próximas 2 horas: ifood-reentrega-taxa.app/pagar — após prazo pedido cancelado sem reembolso"
+  },
+  {
+    "id": "N031",
+    "categoria": "GOLPE",
+    "tipo": "conta_zerada_urgente",
+    "canal": "SMS",
+    "mensagem": "NUBANK URGENTE: Tentativa de esvaziamento da sua conta detectada AGORA. R$3.200 em risco. Bloqueie IMEDIATAMENTE: nubank-bloquear-urgente.net — você tem 10 minutos antes da transferência ser processada"
+  },
+  {
+    "id": "N032",
+    "categoria": "GOLPE",
+    "tipo": "falso_bb_codigo",
+    "canal": "WhatsApp",
+    "mensagem": "Banco do Brasil Segurança: Para confirmar novo dispositivo e impedir acesso fraudulento à sua conta, informe o código de 6 dígitos que acabou de chegar no seu SMS. Código expira em 3 minutos."
+  },
+  {
+    "id": "N033",
+    "categoria": "GOLPE",
+    "tipo": "heranca_exterior",
+    "canal": "Email",
+    "mensagem": "NOTIFICAÇÃO OFICIAL — Banco Suíço UBS: Você é beneficiário de herança no valor de USD 4.200.000 de parente falecido. Para iniciar processo de transferência deposite USD 500 de taxas legais. Responda com urgência: attorney.james.wilson@legalservice-ch.com"
+  },
+  {
+    "id": "N034",
+    "categoria": "GOLPE",
+    "tipo": "cartao_suspeito_senha",
+    "canal": "Ligação",
+    "mensagem": "Caixa Econômica Federal, central de segurança. Detectamos 3 tentativas de compra suspeita no seu cartão de crédito agora. Para bloquear o cartão e abrir contestação, confirme os 6 dígitos do cartão e a senha de 4 números."
+  },
+  {
+    "id": "N035",
+    "categoria": "GOLPE",
+    "tipo": "whatsapp_verificacao",
+    "canal": "WhatsApp",
+    "mensagem": "WHATSAPP SECURITY TEAM: Your account has been flagged for suspicious activity. To verify your identity and avoid permanent suspension, send us the 6-digit verification code received by SMS immediately. Code expires in 10 minutes."
+  },
+  {
+    "id": "N036",
+    "categoria": "GOLPE",
+    "tipo": "falso_delivery_taxa",
+    "canal": "SMS",
+    "mensagem": "Shopee Express: Encomenda #SP8847291 aguardando despacho. Taxa alfandegária de R$23,90 PENDENTE. Pague em até 24h para liberar: shopee-taxa-liberacao.net/pagar — após prazo será devolvida ao remetente"
+  },
+  {
+    "id": "N037",
+    "categoria": "GOLPE",
+    "tipo": "golpe_previdencia",
+    "canal": "SMS",
+    "mensagem": "INSS URGENTE: Benefício atrasado de R$3.100 bloqueado por irregularidade cadastral. Regularize AGORA pelo CPF em: inss-regularizar-beneficio.net — prazo 48h para não perder pagamentos acumulados"
+  },
+  {
+    "id": "N038",
+    "categoria": "GOLPE",
+    "tipo": "qrcode_pix_falso",
+    "canal": "WhatsApp",
+    "mensagem": "Atenção! Seu QR Code Pix do banco foi COMPROMETIDO por hackers. Todos pagamentos recebidos nos últimos 7 dias podem ter sido desviados. Verifique e recadastre URGENTE: pix-verificar-chave.net/recadastro"
+  },
+  {
+    "id": "N039",
+    "categoria": "GOLPE",
+    "tipo": "premio_celular",
+    "canal": "Instagram",
+    "mensagem": "🎁 SAMSUNG BRASIL SORTEIO OFICIAL! Você foi selecionado para receber um Galaxy S24 Ultra GRÁTIS! Só hoje! Pague apenas o frete de R$29,90 via Pix: samsung-sorteio-brasil.net/resgatar — restam 3 unidades!"
+  },
+  {
+    "id": "N040",
+    "categoria": "GOLPE",
+    "tipo": "falsa_central_inter",
+    "canal": "SMS",
+    "mensagem": "Inter: ALERTA MÁXIMO — Acesso não autorizado detectado na sua conta digital AGORA. Bloqueie imediatamente acessando: inter-seguranca-urgente.net com seu CPF e senha para confirmar identidade"
+  },
+  {
+    "id": "N041",
+    "categoria": "LEGITIMA",
+    "tipo": "conversa_amigo",
+    "canal": "WhatsApp",
+    "mensagem": "E aí, tudo bem? Conseguiu resolver aquele problema no trabalho que você me contou semana passada? Fica tranquilo que isso passa."
+  },
+  {
+    "id": "N042",
+    "categoria": "LEGITIMA",
+    "tipo": "grupo_trabalho",
+    "canal": "WhatsApp",
+    "mensagem": "Galera, lembrar que amanhã não tem expediente por conta do feriado municipal. Quem precisar de algo urgente manda email que respondo na segunda."
+  },
+  {
+    "id": "N043",
+    "categoria": "LEGITIMA",
+    "tipo": "familiar_simples",
+    "canal": "WhatsApp",
+    "mensagem": "Filho, a chave reserva da casa tá em cima do armário da cozinha caso você precise. Beijo"
+  },
+  {
+    "id": "N044",
+    "categoria": "LEGITIMA",
+    "tipo": "confirmacao_pedido_oficial",
+    "canal": "Email",
+    "mensagem": "Seu pedido Magazine Luiza #ML-20394817 foi confirmado e está sendo preparado. Previsão de envio: amanhã. Acompanhe em magazineluiza.com.br/minha-conta"
+  },
+  {
+    "id": "N045",
+    "categoria": "LEGITIMA",
+    "tipo": "conversa_namorado",
+    "canal": "WhatsApp",
+    "mensagem": "Amor, já saí do trabalho. Pego pizza no caminho? Qual sabor você quer? Chego em uns 40 minutos 🍕"
+  },
+  {
+    "id": "N046",
+    "categoria": "LEGITIMA",
+    "tipo": "vizinho_pacote",
+    "canal": "WhatsApp",
+    "mensagem": "Oi! Sou a Mônica do apt 301. Recebi um pacote seu por engano na portaria. Pode passar buscar quando quiser, fico em casa hoje."
+  },
+  {
+    "id": "N047",
+    "categoria": "LEGITIMA",
+    "tipo": "escola_aviso",
+    "canal": "WhatsApp",
+    "mensagem": "Comunicado Escola Municipal Pedro II: Não haverá aula na sexta-feira dia 22/11 por conta de eleições. As atividades retornam normalmente na segunda-feira."
+  },
+  {
+    "id": "N048",
+    "categoria": "LEGITIMA",
+    "tipo": "medico_resultado",
+    "canal": "WhatsApp",
+    "mensagem": "Bom dia! Aqui é a secretaria do Dr. Fábio. Os resultados dos seus exames chegaram e estão normais. Dr. Fábio pediu para agendar retorno em 6 meses. Quer marcar?"
+  },
+  {
+    "id": "N049",
+    "categoria": "LEGITIMA",
+    "tipo": "notificacao_app_entrega",
+    "canal": "App",
+    "mensagem": "Seu pedido saiu para entrega! Previsão: hoje entre 14h e 18h. Acompanhe em tempo real pelo app. Entregador: Carlos — Honda Pop branca."
+  },
+  {
+    "id": "N050",
+    "categoria": "LEGITIMA",
+    "tipo": "amigo_pergunta",
+    "canal": "WhatsApp",
+    "mensagem": "Cara, você conhece algum bom mecânico na região do Tatuapé? O meu usual fechou e preciso fazer revisão no carro semana que vem."
+  },
+  {
+    "id": "N051",
+    "categoria": "LEGITIMA",
+    "tipo": "condominio_aviso",
+    "canal": "WhatsApp",
+    "mensagem": "Aviso condomínio: O portão da garagem passará por manutenção amanhã das 9h às 12h. Pedimos que quem precisar sair nesse horário use a saída lateral. Obrigado."
+  },
+  {
+    "id": "N052",
+    "categoria": "LEGITIMA",
+    "tipo": "notificacao_banco_sem_link",
+    "canal": "SMS",
+    "mensagem": "Bradesco: Login realizado em 20/11 às 09:14 no app. Aparelho: iPhone 14. Se não foi você, ligue *3737 ou acesse pelo app. Nunca informamos senhas por telefone."
+  },
+  {
+    "id": "N053",
+    "categoria": "LEGITIMA",
+    "tipo": "colega_trabalho",
+    "canal": "WhatsApp",
+    "mensagem": "Oi! Você tem o arquivo da apresentação da reunião de ontem? Não consegui salvar na hora e preciso revisar uma parte antes de mandar pro cliente."
+  },
+  {
+    "id": "N054",
+    "categoria": "LEGITIMA",
+    "tipo": "mãe_pergunta",
+    "canal": "WhatsApp",
+    "mensagem": "Meu filho, você vem no domingo? Vou fazer frango assado. Me avisa antes para eu saber o quanto fazer. Com saudade 😊"
+  },
+  {
+    "id": "N055",
+    "categoria": "LEGITIMA",
+    "tipo": "confirmacao_consulta",
+    "canal": "SMS",
+    "mensagem": "Hospital Sírio-Libanês: Consulta confirmada — Dr. Paulo Salave — Ortopedia. Quinta-feira 21/11 às 15h, Bloco C, sala 304. Leve exames de imagem anteriores."
+  },
+  {
+    "id": "N056",
+    "categoria": "LEGITIMA",
+    "tipo": "amazon_confirmacao",
+    "canal": "Email",
+    "mensagem": "Pedido Amazon #501-8837291-9234 enviado via Correios. Código de rastreio: AM881923746BR. Acesse amazon.com.br/orders para acompanhar."
+  },
+  {
+    "id": "N057",
+    "categoria": "LEGITIMA",
+    "tipo": "grupo_amigos_evento",
+    "canal": "WhatsApp",
+    "mensagem": "Pessoal! Reservei mesa no Outback Moema pro aniversário da Ju sábado às 20h. São 8 pessoas confirmadas. Quem ainda não confirmou, fala agora pra não perder a reserva 🎂"
+  },
+  {
+    "id": "N058",
+    "categoria": "LEGITIMA",
+    "tipo": "portaria_encomenda",
+    "canal": "WhatsApp",
+    "mensagem": "Portaria Edifício Aurora: Chegou uma encomenda para o apartamento 74. Pode retirar a qualquer momento conosco na portaria. Horário: 7h às 22h."
+  },
+  {
+    "id": "N059",
+    "categoria": "LEGITIMA",
+    "tipo": "professor_aviso",
+    "canal": "WhatsApp",
+    "mensagem": "Pessoal, a aula de quinta será realizada de forma remota pelo Meet. Link no mural do portal. Dúvidas respondam aqui. Abraços, Prof. Renata"
+  },
+  {
+    "id": "N060",
+    "categoria": "LEGITIMA",
+    "tipo": "2fa_banco_legitimo",
+    "canal": "SMS",
+    "mensagem": "Nubank: Código de verificação 847391. Válido por 5 min. Nunca compartilhe com ninguém. O Nubank jamais pede esse código por telefone ou mensagem."
+  },
+  {
+    "id": "N061",
+    "categoria": "LEGITIMA",
+    "tipo": "rh_empresa",
+    "canal": "Email",
+    "mensagem": "RH Grupo Pão de Açúcar: Seu holerite de outubro está disponível no portal do colaborador em grupopaodeacucar.com.br/colaboradores. Login com seu número de matrícula."
+  },
+  {
+    "id": "N062",
+    "categoria": "LEGITIMA",
+    "tipo": "agendamento_dentista",
+    "canal": "SMS",
+    "mensagem": "Clínica OdontoSaúde: Lembrete de consulta com Dr. Tiago Moraes — Sexta-feira 22/11 às 10h30. Confirmação respondendo SIM. Cancelamentos com 24h de antecedência."
+  },
+  {
+    "id": "N063",
+    "categoria": "LEGITIMA",
+    "tipo": "amigo_recomendacao",
+    "canal": "WhatsApp",
+    "mensagem": "Cara, fui num restaurante incrível no Pinheiros ontem. Salmão na brasa espetacular. Te mando o endereço. Vale muito a pena pra você que curte peixe."
+  },
+  {
+    "id": "N064",
+    "categoria": "LEGITIMA",
+    "tipo": "empresa_notificacao",
+    "canal": "Email",
+    "mensagem": "GitHub: New sign-in to your account from São Paulo, Brazil. Browser: Chrome on Linux. If this was you, no action needed. If not, secure your account at github.com/settings/security"
+  },
+  {
+    "id": "N065",
+    "categoria": "LEGITIMA",
+    "tipo": "familiar_photo",
+    "canal": "WhatsApp",
+    "mensagem": "Gente olha essa foto linda de domingo na praia! A criançada adorou. Vamos repetir no réveillon? 🏖️ [foto]"
+  },
+  {
+    "id": "N066",
+    "categoria": "LEGITIMA",
+    "tipo": "seguradora_oficial",
+    "canal": "Email",
+    "mensagem": "Sulamerica Saúde: Sua carteirinha digital foi atualizada. Acesse o app Sulamerica para visualizar. Número de beneficiário: 0042938471. Validade: 31/12/2024."
+  },
+  {
+    "id": "N067",
+    "categoria": "LEGITIMA",
+    "tipo": "mercado_confirmacao",
+    "canal": "App",
+    "mensagem": "Compra aprovada na Americanas. Produto: Fone Sony WH-1000XM5. Estimativa de entrega: 25-27/11. Você receberá atualizações por aqui."
+  },
+  {
+    "id": "N068",
+    "categoria": "LEGITIMA",
+    "tipo": "chefe_feedback",
+    "canal": "WhatsApp",
+    "mensagem": "Bom trabalho na apresentação de ontem! O cliente ficou muito satisfeito com os resultados. Continue assim."
+  },
+  {
+    "id": "N069",
+    "categoria": "LEGITIMA",
+    "tipo": "clinica_exame",
+    "canal": "SMS",
+    "mensagem": "DASA Medicina: Resultado do exame de hemograma já disponível no app ou em resultados.dasa.com.br. Protocolo: 2024118847."
+  },
+  {
+    "id": "N070",
+    "categoria": "LEGITIMA",
+    "tipo": "governo_oficial",
+    "canal": "Email",
+    "mensagem": "gov.br: Sua solicitação de emissão de Certidão de Antecedentes Criminais (protocolo 2024/88273) foi processada. Documento disponível em meu.gov.br/certidoes por 90 dias."
+  },
+  {
+    "id": "N071",
+    "categoria": "LEGITIMA",
+    "tipo": "app_banco_confirma",
+    "canal": "App",
+    "mensagem": "Inter: Transferência recebida de Ana Luiza Ferreira — R$75,00. Descrição: racha do jantar. Seu saldo foi atualizado."
+  },
+  {
+    "id": "N072",
+    "categoria": "LEGITIMA",
+    "tipo": "colega_reuniao",
+    "canal": "WhatsApp",
+    "mensagem": "Oi, você consegue entrar na call do cliente às 14h hoje? O Pedro teve imprevisto e não vai conseguir participar."
+  },
+  {
+    "id": "N073",
+    "categoria": "LEGITIMA",
+    "tipo": "familia_saude",
+    "canal": "WhatsApp",
+    "mensagem": "Filho, fui ao médico hoje e ele disse que estou ótimo. Exames todos normais. Obrigado por ter me acompanhado. Te amo ❤️"
+  },
+  {
+    "id": "N074",
+    "categoria": "LEGITIMA",
+    "tipo": "streaming_oficial",
+    "canal": "Email",
+    "mensagem": "Disney+: Novidade! A nova temporada de The Bear já está disponível. Assista agora em disneyplus.com ou pelo app."
+  },
+  {
+    "id": "N075",
+    "categoria": "LEGITIMA",
+    "tipo": "correios_oficial",
+    "canal": "SMS",
+    "mensagem": "Correios: Objeto RR881923746BR entregue com sucesso em 20/11 às 14:37. Destinatário: João. Acompanhe em correios.com.br/rastreamento"
+  },
+  {
+    "id": "N076",
+    "categoria": "LEGITIMA",
+    "tipo": "banco_real_aviso",
+    "canal": "SMS",
+    "mensagem": "Santander: Sua fatura do cartão de crédito fecha em 3 dias. Valor atual: consulte pelo app ou internet banking. Para dúvidas: *3535."
+  },
+  {
+    "id": "N077",
+    "categoria": "LEGITIMA",
+    "tipo": "amigo_pergunta2",
+    "canal": "WhatsApp",
+    "mensagem": "Você assistiu aquele documentário sobre a Amazônia que passou ontem na Netflix? Tava pensando em ver essa semana."
+  },
+  {
+    "id": "N078",
+    "categoria": "LEGITIMA",
+    "tipo": "dentista_confirmacao",
+    "canal": "WhatsApp",
+    "mensagem": "Bom dia! Aqui é a recepção da Dra. Carla. Só passando para confirmar seu horário de amanhã às 9h. Qualquer dúvida é só falar!"
+  },
+  {
+    "id": "N079",
+    "categoria": "LEGITIMA",
+    "tipo": "loja_oficial_rastreio",
+    "canal": "Email",
+    "mensagem": "Netshoes: Seu tênis Nike Air Max saiu para entrega hoje! Código Correios: SS882913746BR. Entrega prevista: até 18h. Acompanhe em netshoes.com.br/pedidos"
+  },
+  {
+    "id": "N080",
+    "categoria": "LEGITIMA",
+    "tipo": "grupo_estudo",
+    "canal": "WhatsApp",
+    "mensagem": "Galera, o gabarito da prova de ontem foi postado no portal. Quem quiser, a gente se reúne domingo às 16h pra discutir as questões que erramos."
+  },
+  {
+    "id": "N081",
+    "categoria": "AMBIGUA",
+    "tipo": "link_encurtado_promoção",
+    "canal": "SMS",
+    "mensagem": "Americanas: Oferta especial para você! 50% OFF em eletrônicos só hoje. Acesse: ame.rct.me/oferta2024 — válido até meia-noite"
+  },
+  {
+    "id": "N082",
+    "categoria": "AMBIGUA",
+    "tipo": "numero_novo_pedido_dinheiro",
+    "canal": "WhatsApp",
+    "mensagem": "Oi, minha irmã. Número novo aqui. Acabei de chegar em São Paulo e perdi minha carteira no aeroporto. Você consegue me emprestar R$350 via Pix pra me virar hoje? Te devolvo sexta."
+  },
+  {
+    "id": "N083",
+    "categoria": "AMBIGUA",
+    "tipo": "banco_link_suspeito",
+    "canal": "SMS",
+    "mensagem": "Santander: Você tem um benefício exclusivo disponível. Acesse para saber mais: sntdr.link/beneficio-cliente — oferta por tempo limitado."
+  },
+  {
+    "id": "N084",
+    "categoria": "AMBIGUA",
+    "tipo": "cobranca_desconhecida",
+    "canal": "WhatsApp",
+    "mensagem": "Boa tarde! Sou da Recovery Soluções. Consta em nosso sistema débito em seu nome de R$2.347 referente a serviços de 2021. Temos proposta especial de negociação. Posso apresentar?"
+  },
+  {
+    "id": "N085",
+    "categoria": "AMBIGUA",
+    "tipo": "oferta_real_suspeita",
+    "canal": "WhatsApp",
+    "mensagem": "PlayStation 5 + 2 controles + 3 jogos por R$2.100 no Pix, à vista. Tenho nota fiscal. Posso enviar fotos. Entrego em mãos em SP capital ou envio pelos Correios."
+  },
+  {
+    "id": "N086",
+    "categoria": "AMBIGUA",
+    "tipo": "pesquisa_premiada",
+    "canal": "WhatsApp",
+    "mensagem": "Olá! Sou do Instituto Ipsos. Você participaria de uma pesquisa rápida sobre experiências bancárias? São só 5 minutos. Quem completa recebe R$30 via Pix como agradecimento."
+  },
+  {
+    "id": "N087",
+    "categoria": "AMBIGUA",
+    "tipo": "familiar_urgencia_dinheiro",
+    "canal": "WhatsApp",
+    "mensagem": "Tio, é a Camila. Mudei de número essa semana. Tô numa situação complicada, meu namorado me deixou e precisei sair de casa correndo. Você consegue me ajudar com R$500 agora? Você é a única pessoa que posso pedir."
+  },
+  {
+    "id": "N088",
+    "categoria": "AMBIGUA",
+    "tipo": "email_meta_suspeito",
+    "canal": "Email",
+    "mensagem": "Meta Platforms: Sua conta do Instagram foi sinalizada por uso de conteúdo protegido. Para evitar suspensão permanente acesse a central de recursos: instagram-recurso.support/apelar nas próximas 24 horas."
+  },
+  {
+    "id": "N089",
+    "categoria": "AMBIGUA",
+    "tipo": "promoção_banco_real",
+    "canal": "Email",
+    "mensagem": "Nubank: Você foi selecionado para aumentar seu limite de crédito para R$12.000. Para aceitar, confirme seus dados de renda no app ou acesse: nubank.com.br/aumento-limite"
+  },
+  {
+    "id": "N090",
+    "categoria": "AMBIGUA",
+    "tipo": "desconhecido_contexto",
+    "canal": "WhatsApp",
+    "mensagem": "Boa noite! Tenho interesse no seu imóvel anunciado. Você ainda está vendendo? Qual o melhor horário para conversar? Tenho proposta séria."
+  },
+  {
+    "id": "N091",
+    "categoria": "AMBIGUA",
+    "tipo": "oferta_emprego_abordagem",
+    "canal": "LinkedIn",
+    "mensagem": "Olá! Vi seu perfil e temos uma oportunidade de consultoria independente com remuneração de R$8.000 mensais, totalmente remota. Você toparia uma conversa informal sobre a posição?"
+  },
+  {
+    "id": "N092",
+    "categoria": "AMBIGUA",
+    "tipo": "sms_operadora_suspeito",
+    "canal": "SMS",
+    "mensagem": "Vivo: Sua linha acumula 4.200 pontos Vivo Valoriza prestes a expirar. Resgate em: vivo.com.br/valoriza ou ligue *8486. Válido até 30/11."
+  },
+  {
+    "id": "N093",
+    "categoria": "AMBIGUA",
+    "tipo": "mei_receita",
+    "canal": "Email",
+    "mensagem": "Simples Nacional — PGMEI: Seu DAS referente a outubro/2024 no valor de R$72,90 vence amanhã. Emita em: gov.br/empresas-e-negocios/mei ou acesse pelo app MEI."
+  },
+  {
+    "id": "N094",
+    "categoria": "AMBIGUA",
+    "tipo": "heranca_advogado_formal",
+    "canal": "Email",
+    "mensagem": "Dr. André Bastos — OAB/SP 183.291: Represento espólio com sobrenome idêntico ao seu. Há valores a partilhar. Trata-se de assunto sigiloso e legítimo. Poderia me ligar para explicar melhor? Fone: (11) 3847-2910"
+  },
+  {
+    "id": "N095",
+    "categoria": "AMBIGUA",
+    "tipo": "link_foto_suspeito",
+    "canal": "WhatsApp",
+    "mensagem": "Kkkkk olha só essa foto que achei de você nesse site: fotos-antigas.net/busca — que época boa essa!"
+  },
+  {
+    "id": "N096",
+    "categoria": "AMBIGUA",
+    "tipo": "cobranca_energia",
+    "canal": "SMS",
+    "mensagem": "Enel SP: Fatura de novembro disponível. Valor: R$187,40. Vencimento: 25/11. Pague em: enel.com.br/2via ou em lotéricas e correspondentes bancários."
+  },
+  {
+    "id": "N097",
+    "categoria": "AMBIGUA",
+    "tipo": "sorteio_cliente",
+    "canal": "Email",
+    "mensagem": "Americanas: Como cliente fiel, você foi selecionado para o sorteio de R$2.000 em créditos! Participe até 30/11 acessando americanas.com.br/sorteio-clientes com seu CPF cadastrado."
+  },
+  {
+    "id": "N098",
+    "categoria": "AMBIGUA",
+    "tipo": "desconhecido_vendedor",
+    "canal": "WhatsApp",
+    "mensagem": "Olá! Vim pelo grupo do seu bairro. Faço marmitas fitness por encomenda. Cardápio semanal com 5 refeições por R$130. Tem interesse? Faço entrega na região."
+  },
+  {
+    "id": "N099",
+    "categoria": "AMBIGUA",
+    "tipo": "mensagem_urgencia_vaga",
+    "canal": "WhatsApp",
+    "mensagem": "Boa tarde! Sou recrutadora da Randstad. Vi seu perfil e temos vaga URGENTE para Analista de TI Jr. Salário R$4.500 + benefícios. Você teria disponibilidade para entrevista essa semana?"
+  },
+  {
+    "id": "N100",
+    "categoria": "AMBIGUA",
+    "tipo": "pix_desconhecido",
+    "canal": "WhatsApp",
+    "mensagem": "Oi, tudo bem? Passei pelo grupo do condomínio. Você conhece alguém que faz frete pequeno? Preciso levar uns móveis pro interior semana que vem. Pago bem."
+  }
+]
