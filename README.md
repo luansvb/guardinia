@@ -29,6 +29,14 @@
 
 ---
 
+## 📊 Production Benchmark
+
+See full report here:
+
+👉 [Benchmark Report](benchmark/BENCHMARK_REPORT.md)
+
+---
+
 ## 📌 Overview
 
 GuardinIA is a hybrid anti-fraud engine designed to detect digital scams using:
