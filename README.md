@@ -14,7 +14,7 @@ Deterministic security heuristics + Cognitive AI (Amazon Bedrock) with cost-awar
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Benchmark](https://img.shields.io/badge/Benchmark-200%20msgs-blue)](benchmark/)
 
-[🌐 Live Demo](https://luansvb.github.io/guardinia/landing/) · [📊 Benchmark Report](BENCHMARK.md) · [🏗️ Architecture](ARCHITECTURE.md) · [📱 Try on WhatsApp](https://wa.me/5541XXXXXXXXX?text=Oi)
+[🌐 Live Demo](https://luansvb.github.io/guardinia/landing/) · [📊 Benchmark Report](BENCHMARK.md) · [🏗️ Architecture](ARCHITECTURE.md) · [📱 Try on WhatsApp](https://wa.me/554185086826?text=Oi)
 
 </div>
 
@@ -142,7 +142,7 @@ Tested against **200 real-world messages** in production environment:
 ### Test via WhatsApp (Live Production)
 Send a suspicious message to:
 ```
-+55 41 XXXX-XXXX
++55 41 98508-6826
 ```
 
 The bot will analyze and respond in ~3 seconds with classification and risk score.
