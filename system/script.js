@@ -8,7 +8,7 @@ const CONFIG = {
     // Webhook do GuardinIA
     WEBHOOK_URL: 'https://hk2n2f9vu2.execute-api.us-east-1.amazonaws.com/prod/teste/teste',
     MAX_FILE_SIZE: 5 * 1024 * 1024, // 5MB
-    ALLOWED_TYPES: ['image/png', 'image/jpeg', 'image/jpg', 'image/webp']
+    ALLOWED_TYPES: ['image/png', 'image/jpeg', 'image/jpg']
 };
 
 // ========= ELEMENTOS DOM =========
@@ -151,7 +151,7 @@ function initializeImageUpload() {
 function handleFileUpload(file) {
     // Validate file type
     if (!CONFIG.ALLOWED_TYPES.includes(file.type)) {
-        showError('Formato inválido! Use PNG, JPG ou WEBP.');
+        showError('Formato inválido! Use PNG ou JPG.');
         return;
     }
     
@@ -239,11 +239,11 @@ async function performAnalysis() {
 
             });
             
-            if (!response.ok) {
-                throw new Error(`Erro ${response.status}: ${response.statusText}`);
-            }
-            
             const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.erro || `Erro ${response.status}: ${response.statusText}`);
+            }
+
             hideLoading();
             displayResults(result);
             
@@ -263,11 +263,11 @@ async function performAnalysis() {
                 })
             });
             
-            if (!response.ok) {
-                throw new Error(`Erro ${response.status}: ${response.statusText}`);
-            }
-            
             const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.erro || `Erro ${response.status}: ${response.statusText}`);
+            }
+
             hideLoading();
             displayResults(result);
         }
@@ -312,21 +312,16 @@ function hideLoading() {
 function displayResults(result) {
     // Mapear cor da resposta para tipo de resultado
     const colorMap = {
+        'neutro': 'neutral',
+        'verde-claro': 'low-risk',
         'verde': 'success',
         'amarelo': 'warning',
+        'laranja': 'high-risk',
         'vermelho': 'danger'
     };
     
-    const resultType = colorMap[result.cor] || 'warning';
-    
-    // Títulos padrão
-    const titles = {
-        'verde': '✅ Mensagem Segura',
-        'amarelo': '⚠️ Atenção',
-        'vermelho': '🚨 Possível Golpe'
-    };
-    
-    const title = titles[result.cor] || 'Resultado da Análise';
+    const resultType = colorMap[result.cor] || 'neutral';
+    const title = result.status || 'Resultado da Análise';
     const content = result.acao_recomendada || result.mensagem || 'Análise concluída.';
     
     // Create result HTML
@@ -335,12 +330,12 @@ function displayResults(result) {
             <div class="result-header">
                 <i class="fas ${getResultIcon(resultType)} result-icon"></i>
                 <div>
-                    <div class="result-title">${title}</div>
+                    <div class="result-title">${escapeHtml(title)}</div>
                 </div>
             </div>
             <div class="result-content">
-                <p>${content}</p>
-                ${result.detalhes ? `<p><em>${result.detalhes}</em></p>` : ''}
+                <p>${escapeHtml(content)}</p>
+                ${result.detalhes ? `<p><em>${escapeHtml(result.detalhes)}</em></p>` : ''}
             </div>
         </div>
     `;
@@ -365,10 +360,19 @@ function determineResultType(result) {
 function getResultIcon(type) {
     const icons = {
         danger: 'fa-exclamation-circle',
+        'high-risk': 'fa-exclamation-triangle',
         warning: 'fa-exclamation-triangle',
+        'low-risk': 'fa-info-circle',
+        neutral: 'fa-info-circle',
         success: 'fa-check-circle'
     };
     return icons[type] || 'fa-info-circle';
+}
+
+function escapeHtml(value) {
+    const element = document.createElement('div');
+    element.textContent = String(value ?? '');
+    return element.innerHTML;
 }
 
 function clearResults() {

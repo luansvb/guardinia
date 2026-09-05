@@ -535,6 +535,21 @@ body {
     border-color: var(--laranja);
 }
 
+.result-card.high-risk {
+    background: var(--laranja-claro);
+    border-color: var(--laranja);
+}
+
+.result-card.low-risk {
+    background: var(--verde-claro);
+    border-color: var(--verde);
+}
+
+.result-card.neutral {
+    background: #eff6ff;
+    border-color: var(--azul-claro);
+}
+
 .result-card.success {
     background: var(--verde-claro);
     border-color: var(--verde);
@@ -557,6 +572,18 @@ body {
 
 .result-card.warning .result-icon {
     color: var(--laranja);
+}
+
+.result-card.high-risk .result-icon {
+    color: var(--laranja);
+}
+
+.result-card.low-risk .result-icon {
+    color: var(--verde);
+}
+
+.result-card.neutral .result-icon {
+    color: var(--azul-claro);
 }
 
 .result-card.success .result-icon {
