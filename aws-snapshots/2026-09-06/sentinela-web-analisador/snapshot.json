@@ -1,0 +1,54 @@
+{
+  "captured_at": "2026-09-06",
+  "function_name": "sentinela_web_analisador",
+  "source_archive": "sentinela_web_analisador.zip",
+  "source_file": "src/lambda_function.py",
+  "source_sha256": "05602dce24b24bd50db7635677df83510b14af5c14329b409176da3ed02d59f8",
+  "handler": "lambda_function.lambda_handler",
+  "runtime": "python3.11",
+  "architecture": "x86_64",
+  "memory_mb": 256,
+  "timeout_seconds": 30,
+  "ephemeral_storage_mb": 512,
+  "reserved_concurrency": null,
+  "configured_environment_variable_names": [
+    "BEDROCK_ENABLED",
+    "CACHE_TABLE_NAME",
+    "DYNAMODB_TABLE",
+    "ENV",
+    "METRICS_TABLE_NAME",
+    "THRESHOLD_SCAM",
+    "ZONA_COGNITIVA_MAX",
+    "ZONA_COGNITIVA_MIN"
+  ],
+  "aws_services_used": [
+    "API Gateway",
+    "Bedrock Runtime",
+    "DynamoDB",
+    "Textract",
+    "CloudWatch Logs"
+  ],
+  "observed_trigger": {
+    "service": "API Gateway",
+    "api": "sentinela_gw",
+    "method": "POST",
+    "path": "/analisar-texto",
+    "payload_format_version": "2.0",
+    "integration_timeout_ms": 30000,
+    "authorizer": null
+  },
+  "observed_metrics": {
+    "window": "one week ending 2026-09-06",
+    "invocations": 14,
+    "errors": 0,
+    "throttles": 0,
+    "success_rate_percent": 100,
+    "average_duration_ms": 51.06,
+    "maximum_duration_ms": 222,
+    "maximum_concurrent_executions": 1
+  },
+  "notes": [
+    "The deployed function identifies itself as GuardinIA V5.5.",
+    "The API route had no authorizer and the API stages had no access logging enabled."
+  ]
+}

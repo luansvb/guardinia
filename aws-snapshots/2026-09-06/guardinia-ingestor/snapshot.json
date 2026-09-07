@@ -1,0 +1,34 @@
+{
+  "captured_at": "2026-09-06",
+  "function_name": "Guardinia-Ingestor",
+  "source_archive": "Guardinia-Ingestor.zip",
+  "source_file": "src/lambda_function.py",
+  "source_sha256": "d47302698d6b9dff1d92fca0b75cb56d88b386c50b38ba2c1ac5e8bff405d374",
+  "handler": "lambda_function.lambda_handler",
+  "runtime": "python3.11",
+  "architecture": "x86_64",
+  "memory_mb": 128,
+  "timeout_seconds": 3,
+  "ephemeral_storage_mb": 512,
+  "reserved_concurrency": null,
+  "configured_environment_variable_names": [
+    "SECRET_NAME",
+    "SQS_QUEUE_URL"
+  ],
+  "aws_services_used": [
+    "Secrets Manager",
+    "SQS",
+    "CloudWatch Logs"
+  ],
+  "observed_trigger": {
+    "service": "API Gateway",
+    "api": "Guardinia-Ingestor-API",
+    "method": "ANY",
+    "path": "/Guardinia-Ingestor",
+    "role": "canonical Meta webhook entrypoint"
+  },
+  "notes": [
+    "The Lambda resource policy allowed invocation from the legacy API Gateway path.",
+    "The function publishes accepted messages to Guardinia-Incoming-Queue."
+  ]
+}

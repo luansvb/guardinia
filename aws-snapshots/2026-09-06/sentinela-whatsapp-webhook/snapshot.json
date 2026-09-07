@@ -1,0 +1,59 @@
+{
+  "captured_at": "2026-09-06",
+  "function_name": "sentinela_whatsapp_webhook",
+  "source_archive": "sentinela_whatsapp_webhook.zip",
+  "source_file": "src/webhook.py",
+  "source_sha256": "fe5b59cc8a84e86f323c803855dd87bc39c3e40c101ba5161fd4c42e6121376e",
+  "handler": "webhook.lambda_handler",
+  "runtime": "python3.11",
+  "architecture": "x86_64",
+  "memory_mb": 512,
+  "timeout_seconds": 60,
+  "ephemeral_storage_mb": 512,
+  "reserved_concurrency": null,
+  "configured_environment_variable_names": [
+    "APP_SECRET",
+    "BEDROCK_MODEL_HAIKU",
+    "BEDROCK_MODEL_ID",
+    "BEDROCK_MODEL_SONNET",
+    "BEDROCK_REGION",
+    "BOT_WA_ID",
+    "GOOGLE_SAFE_BROWSING_API_KEY",
+    "META_TOKEN",
+    "PHONE_NUMBER_ID",
+    "RELOAD",
+    "VERIFY_TOKEN",
+    "VIRUSTOTAL_API_KEY"
+  ],
+  "aws_services_used": [
+    "API Gateway",
+    "Bedrock Runtime",
+    "DynamoDB",
+    "Textract",
+    "CloudWatch Logs"
+  ],
+  "observed_trigger": {
+    "service": "API Gateway",
+    "api": "sentinela_gw",
+    "method": "ANY",
+    "path": "/webhook",
+    "payload_format_version": "2.0",
+    "authorizer": null,
+    "role": "secondary direct webhook"
+  },
+  "observed_metrics": {
+    "window": "one week ending 2026-09-06",
+    "invocations": 4,
+    "errors": 0,
+    "throttles": 0,
+    "success_rate_percent": 100,
+    "average_duration_ms": 1.838,
+    "maximum_duration_ms": 2.85,
+    "maximum_concurrent_executions": 1
+  },
+  "notes": [
+    "Reserved concurrency was removed on 2026-09-06 after it had been set to zero.",
+    "The low invocation count indicates that this was not the canonical Meta webhook flow during the observed window.",
+    "Sensitive environment values were deliberately excluded."
+  ]
+}

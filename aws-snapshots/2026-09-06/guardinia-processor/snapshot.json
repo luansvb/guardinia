@@ -1,0 +1,55 @@
+{
+  "captured_at": "2026-09-06",
+  "function_name": "Guardinia-Processor",
+  "source_archive": "Guardinia-Processor.zip",
+  "source_file": "src/lambda_function.py",
+  "source_sha256": "ad9e21c4c555c12c83d78a4b6430362c96ac2411b791c759692f49bb3eec6931",
+  "handler": "lambda_function.lambda_handler",
+  "runtime": "python3.11",
+  "architecture": "x86_64",
+  "memory_mb": 512,
+  "timeout_seconds": 60,
+  "ephemeral_storage_mb": 512,
+  "reserved_concurrency": null,
+  "configured_environment_variable_names": [
+    "CACHE_TABLE_NAME",
+    "DYNAMODB_TABLE",
+    "ENV",
+    "META_TOKEN",
+    "METRICS_TABLE_NAME",
+    "PHONE_NUMBER_ID",
+    "SECRET_NAME"
+  ],
+  "aws_services_used": [
+    "Bedrock Runtime",
+    "DynamoDB",
+    "Secrets Manager",
+    "SQS",
+    "Textract",
+    "CloudWatch Logs"
+  ],
+  "observed_trigger": {
+    "service": "SQS",
+    "queue": "Guardinia-Incoming-Queue",
+    "batch_size": 1,
+    "batch_window_seconds": 0,
+    "report_batch_item_failures": true,
+    "dead_letter_queue": "Guardinia-Incoming-DLQ",
+    "maximum_receive_count": 5
+  },
+  "observed_metrics": {
+    "window": "one week ending 2026-09-06",
+    "invocations": 50,
+    "errors": 0,
+    "throttles": 0,
+    "success_rate_percent": 100,
+    "average_duration_ms": 230,
+    "maximum_duration_ms": 2733,
+    "maximum_concurrent_executions": 2
+  },
+  "notes": [
+    "This deployed source differs from the public repository handler in six functions and 24 diff regions.",
+    "The code references guardinia_cache, but that table was absent from the DynamoDB inventory.",
+    "Sensitive environment values were not preserved in this snapshot."
+  ]
+}
